@@ -1,608 +1,767 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta
-name="description"
-content="ELEVIQ helps students discover admissions, scholarships, examinations, registrations and educational opportunities."
-
-«»
-
-  <meta name="keywords" content="ELEVIQ, Nigeria admissions, scholarships, JAMB, Post-UTME, education, university admissions">  <title>ELEVIQ | Your Smarter Pathway to Opportunities</title>  <link rel="stylesheet" href="style.css">
-</head><body><!-- =========================
-     NAVIGATION
-========================= --><header class="navbar">  <a class="logo" href="index.html#home" aria-label="ELEVIQ home">
-    <img src="eleviq-logo.png" alt="ELEVIQ">
-  </a>  <nav class="nav-links" id="navLinks"><a href="index.html#home">
-  Home
-</a>
-
-<a href="admissions.html">
-  Admissions
-</a>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ELEVIQ | Your Smarter Pathway to Opportunities</title>
+
+  <meta name="description"
+        content="Discover admissions, scholarships, examinations, registrations, grants, bursaries and useful learning resources with ELEVIQ.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
 
-<a href="index.html#opportunities">
-  Opportunities
-</a>
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-container">
 
-<a href="index.html#services">
-  Services
-</a>
+      <a href="index.html#home" class="logo">
+        <img src="eleviq-logo.png" alt="ELEVIQ Logo">
+      </a>
 
-<a href="index.html#resources">
-  Resources
-</a>
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu"
+        aria-expanded="false"
+        onclick="toggleMenu()">
+        ☰
+      </button>
 
-<a href="index.html#about">
-  About
-</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="index.html#opportunities">Opportunities</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+
+        <a
+          href="https://wa.me/2349011582752"
+          class="nav-help"
+          target="_blank">
+          Get Help
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-content">
 
-<a href="index.html#contact">
-  Contact
-</a>
+        <span class="eyebrow">
+          EDUCATION • OPPORTUNITIES • GUIDANCE
+        </span>
 
-  </nav>  <div class="nav-actions"><a class="login-link" href="index.html#contact">
-  Get Help
-</a>
+        <h1>
+          Find your next educational opportunity.
+        </h1>
 
-<button
-  class="menu-button"
-  id="menuButton"
-  aria-label="Open menu"
-  aria-expanded="false"
-  type="button"
->
-  ☰
-</button>
+        <p>
+          Discover admissions, scholarships, examinations,
+          registrations, grants, bursaries and useful learning
+          resources — all in one place.
+        </p>
+
+        <div class="hero-search">
+          <input
+            type="text"
+            placeholder="Search schools, scholarships, admissions, courses..."
+            aria-label="Search">
 
-  </div></header><main><!-- =========================
-     HERO
-========================= --><section id="home" class="hero">  <div class="hero-content"><div class="eyebrow">
-  EDUCATION • OPPORTUNITIES • GUIDANCE
-</div>
+          <button type="button">
+            Search
+          </button>
+        </div>
 
-<h1>
-  Find your next
-  <span>educational opportunity.</span>
-</h1>
+        <div class="hero-buttons">
 
-<p>
-  Discover admissions, scholarships, examinations, registrations,
-  grants, bursaries and useful learning resources — all in one place.
-</p>
+          <a href="admissions.html" class="btn-primary">
+            Explore Admissions
+          </a>
 
+          <a
+            href="https://wa.me/2349011582752"
+            class="btn-secondary"
+            target="_blank">
+            Get Admission Guidance
+          </a>
 
-<!-- SEARCH -->
+        </div>
 
-<form class="search-box" id="siteSearch">
+        <div class="popular-links">
+          <span>Popular:</span>
 
-  <span class="search-icon">⌕</span>
+          <a href="admissions.html">JAMB</a>
+          <a href="admissions.html">Post-UTME</a>
+          <a href="#opportunities">Scholarships</a>
+          <a href="admissions.html">Admissions</a>
+        </div>
 
-  <input
-    id="searchInput"
-    type="search"
-    placeholder="Search schools, scholarships, admissions, courses..."
-    aria-label="Search ELEVIQ"
-  >
+      </div>
 
-  <button type="submit">
-    Search
-  </button>
+    </section>
 
-</form>
 
+    <!-- ================= CATEGORY STRIP ================= -->
+    <section class="category-strip">
 
-<!-- HERO BUTTONS -->
+      <a href="admissions.html" class="category-card">
+        <span>🎓</span>
+        <strong>Admissions</strong>
+        <small>Find opportunities</small>
+      </a>
 
-<div class="hero-actions">
+      <a href="#resources" class="category-card">
+        <span>📝</span>
+        <strong>JAMB & Exams</strong>
+        <small>Exam guidance</small>
+      </a>
 
-  <a
-    class="btn primary"
-    href="admissions.html"
-  >
-    Explore Admissions
-  </a>
+      <a href="#opportunities" class="category-card">
+        <span>💰</span>
+        <strong>Scholarships</strong>
+        <small>Funding options</small>
+      </a>
 
-  <a
-    class="btn secondary"
-    href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20need%20admission%20guidance."
-    target="_blank"
-    rel="noopener"
-  >
-    Get Admission Guidance
-  </a>
+      <a href="#opportunities" class="category-card">
+        <span>🎁</span>
+        <strong>Grants & Bursaries</strong>
+        <small>Financial support</small>
+      </a>
 
-</div>
+      <a href="#services" class="category-card">
+        <span>📋</span>
+        <strong>Registrations</strong>
+        <small>Get assistance</small>
+      </a>
 
+      <a href="#resources" class="category-card">
+        <span>📚</span>
+        <strong>Learning</strong>
+        <small>Study resources</small>
+      </a>
 
-<!-- POPULAR SEARCHES -->
+    </section>
 
-<div class="quick-links">
 
-  <span>Popular:</span>
+    <!-- ================= OPPORTUNITIES ================= -->
+    <section class="section" id="opportunities">
 
-  <a href="admissions.html">
-    JAMB
-  </a>
+      <div class="section-heading">
 
-  <a href="admissions.html">
-    Post-UTME
-  </a>
+        <span class="eyebrow">
+          OPPORTUNITIES
+        </span>
 
-  <a href="#opportunities">
-    Scholarships
-  </a>
+        <h2>
+          Explore what matters to you
+        </h2>
 
-  <a href="admissions.html">
-    Admissions
-  </a>
+        <p>
+          ELEVIQ is being built to make important educational
+          opportunities easier to discover and act on.
+        </p>
 
-</div>
+      </div>
 
-  </div></section><!-- =========================
-     CATEGORY STRIP
-========================= --><section
-  class="category-strip"
-  aria-label="ELEVIQ categories"
->  <a href="admissions.html"><strong>🎓</strong>
 
-<span>Admissions</span>
+      <div class="opportunity-grid">
 
-<small>Find opportunities</small>
+        <!-- ADMISSIONS -->
+        <article class="opportunity-card">
 
-  </a>  <a href="#services"><strong>📝</strong>
+          <div class="card-icon">🎓</div>
 
-<span>JAMB & Exams</span>
+          <span class="card-label">
+            ADMISSIONS
+          </span>
 
-<small>Exam guidance</small>
+          <h3>
+            University & school admissions
+          </h3>
 
-  </a>  <a href="#opportunities"><strong>💰</strong>
+          <p>
+            Find admission opportunities from universities,
+            polytechnics and colleges across Nigeria.
+          </p>
 
-<span>Scholarships</span>
+          <a href="admissions.html">
+            Explore Admissions →
+          </a>
 
-<small>Funding options</small>
+        </article>
 
-  </a>  <a href="#opportunities"><strong>🎁</strong>
 
-<span>Grants & Bursaries</span>
+        <!-- SCHOLARSHIPS -->
+        <article class="opportunity-card">
 
-<small>Financial support</small>
+          <div class="card-icon">💰</div>
 
-  </a>  <a href="#services"><strong>📋</strong>
+          <span class="card-label">
+            SCHOLARSHIPS
+          </span>
 
-<span>Registrations</span>
+          <h3>
+            Scholarships & funding
+          </h3>
 
-<small>Get assistance</small>
+          <p>
+            Discover scholarship, bursary and grant opportunities
+            and learn what each application requires.
+          </p>
 
-  </a>  <a href="#resources"><strong>📚</strong>
+          <a href="#contact">
+            Explore →
+          </a>
 
-<span>Learning</span>
+        </article>
 
-<small>Study resources</small>
 
-  </a></section><!-- =========================
-     OPPORTUNITIES
-========================= --><section id="opportunities" class="section">  <div class="section-heading"><div>
+        <!-- EXAMS -->
+        <article class="opportunity-card">
 
-  <div class="section-kicker">
-    OPPORTUNITIES
-  </div>
+          <div class="card-icon">📝</div>
 
-  <h2>
-    Explore what matters to you
-  </h2>
+          <span class="card-label">
+            EXAMINATIONS
+          </span>
 
-  <p>
-    ELEVIQ is being built to make important educational
-    opportunities easier to discover and act on.
-  </p>
+          <h3>
+            JAMB & examination updates
+          </h3>
 
-</div>
+          <p>
+            Stay informed about examinations, screening exercises,
+            registrations and useful preparation resources.
+          </p>
 
-<a
-  class="text-link"
-  href="#contact"
->
-  Need help? Talk to us →
-</a>
+          <a href="#resources">
+            View resources →
+          </a>
 
-  </div>  <div class="opportunity-grid"><!-- ADMISSIONS -->
+        </article>
 
-<article class="opportunity-card featured">
 
-  <div class="card-icon">
-    🎓
-  </div>
+        <!-- REGISTRATION -->
+        <article class="opportunity-card">
 
-  <span class="tag">
-    ADMISSIONS
-  </span>
+          <div class="card-icon">📋</div>
 
-  <h3>
-    University & school admissions
-  </h3>
+          <span class="card-label">
+            REGISTRATION
+          </span>
 
-  <p>
-    Find admission opportunities from universities,
-    polytechnics and colleges across Nigeria.
-  </p>
+          <h3>
+            Online registration assistance
+          </h3>
 
-  <a href="admissions.html">
-    Explore Admissions →
-  </a>
+          <p>
+            Get practical help with online applications and
+            educational registrations when you need it.
+          </p>
 
-</article>
+          <a
+            href="https://wa.me/2349011582752"
+            target="_blank">
+            Request assistance →
+          </a>
 
+        </article>
 
-<!-- SCHOLARSHIPS -->
+      </div>
 
-<article class="opportunity-card">
+    </section>
 
-  <div class="card-icon">
-    💰
-  </div>
 
-  <span class="tag green">
-    SCHOLARSHIPS
-  </span>
+    <!-- ================= STATS ================= -->
+    <section class="stats-section">
 
-  <h3>
-    Scholarships & funding
-  </h3>
+      <div class="stat">
+        <strong>01</strong>
+        <span>Platform for opportunities</span>
+      </div>
 
-  <p>
-    Discover scholarship, bursary and grant opportunities
-    and learn what each application requires.
-  </p>
+      <div class="stat">
+        <strong>06+</strong>
+        <span>Core opportunity categories</span>
+      </div>
 
-  <a href="#contact">
-    Explore →
-  </a>
+      <div class="stat">
+        <strong>24/7</strong>
+        <span>Access to online information</span>
+      </div>
 
-</article>
+      <div class="stat">
+        <strong>01</strong>
+        <span>Place to start your search</span>
+      </div>
 
+    </section>
 
-<!-- EXAMINATIONS -->
 
-<article class="opportunity-card">
+    <!-- ================= SERVICES ================= -->
+    <section class="section" id="services">
 
-  <div class="card-icon">
-    📝
-  </div>
+      <div class="section-heading">
 
-  <span class="tag purple">
-    EXAMINATIONS
-  </span>
+        <span class="eyebrow">
+          OUR SERVICES
+        </span>
 
-  <h3>
-    JAMB & examination updates
-  </h3>
+        <h2>
+          Practical support when you need it
+        </h2>
 
-  <p>
-    Stay informed about examinations, screening exercises,
-    registrations and useful preparation resources.
-  </p>
+        <p>
+          From finding an opportunity to completing an application,
+          ELEVIQ connects you with the next step.
+        </p>
 
-  <a href="#resources">
-    View resources →
-  </a>
+      </div>
 
-</article>
 
+      <div class="services-grid">
 
-<!-- REGISTRATION -->
+        <article class="service-card">
 
-<article class="opportunity-card">
+          <span>🎓</span>
 
-  <div class="card-icon">
-    📋
-  </div>
+          <h3>
+            Admissions
+          </h3>
 
-  <span class="tag orange">
-    REGISTRATION
-  </span>
+          <p>
+            Admission guidance, school information and
+            application support.
+          </p>
 
-  <h3>
-    Online registration assistance
-  </h3>
+          <a href="admissions.html">
+            Explore Admissions
+          </a>
 
-  <p>
-    Get practical help with online applications and
-    educational registrations when you need it.
-  </p>
+        </article>
 
-  <a
-    href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20need%20help%20with%20an%20online%20registration."
-    target="_blank"
-    rel="noopener"
-  >
-    Request assistance →
-  </a>
 
-</article>
+        <article class="service-card">
 
-  </div></section><!-- =========================
-     STATS
-========================= --><section class="stats-section">  <div class="stats-inner"><div>
-  <strong>01</strong>
-  <span>Platform for opportunities</span>
-</div>
+          <span>📝</span>
 
-<div>
-  <strong>06+</strong>
-  <span>Core opportunity categories</span>
-</div>
+          <h3>
+            Examinations
+          </h3>
 
-<div>
-  <strong>24/7</strong>
-  <span>Access to online information</span>
-</div>
+          <p>
+            Information and assistance for JAMB and other
+            important examinations.
+          </p>
 
-<div>
-  <strong>1</strong>
-  <span>Place to start your search</span>
-</div>
+          <a
+            href="https://wa.me/2349011582752"
+            target="_blank">
+            Get help
+          </a>
 
-  </div></section><!-- =========================
-     SERVICES
-========================= --><section
-  id="services"
-  class="section light"
->  <div class="section-heading centered"><div>
+        </article>
 
-  <div class="section-kicker">
-    OUR SERVICES
-  </div>
 
-  <h2>
-    Practical support when you need it
-  </h2>
+        <article class="service-card">
 
-  <p>
-    From finding an opportunity to completing an application,
-    ELEVIQ connects you with the next step.
-  </p>
+          <span>📋</span>
 
-</div>
+          <h3>
+            Online Registration
+          </h3>
 
-  </div>  <div class="services-grid"><!-- ADMISSIONS -->
+          <p>
+            Support with online registrations and educational
+            applications.
+          </p>
 
-<article class="service-card">
+          <a
+            href="https://wa.me/2349011582752"
+            target="_blank">
+            Get help
+          </a>
 
-  <span>🎓</span>
+        </article>
 
-  <h3>
-    Admissions
-  </h3>
 
-  <p>
-    Admission guidance, school information and
-    application support.
-  </p>
+        <article class="service-card">
 
-  <a href="admissions.html">
-    Explore Admissions
-  </a>
+          <span>💰</span>
 
-</article>
+          <h3>
+            Bursaries & Grants
+          </h3>
 
+          <p>
+            Discover funding opportunities and understand
+            application requirements.
+          </p>
 
-<!-- EXAMINATIONS -->
+          <a href="#opportunities">
+            Explore
+          </a>
 
-<article class="service-card">
+        </article>
 
-  <span>📝</span>
 
-  <h3>
-    Examinations
-  </h3>
+        <article class="service-card">
 
-  <p>
-    Information and assistance for JAMB and other
-    important examinations.
-  </p>
+          <span>🏆</span>
 
-  <a
-    href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20need%20examination%20guidance."
-    target="_blank"
-    rel="noopener"
-  >
-    Get help
-  </a>
+          <h3>
+            Scholarships
+          </h3>
 
-</article>
+          <p>
+            Find scholarship opportunities and guidance
+            for applications.
+          </p>
 
+          <a href="#opportunities">
+            Explore
+          </a>
 
-<!-- ONLINE REGISTRATION -->
+        </article>
 
-<article class="service-card">
 
-  <span>📋</span>
+        <article class="service-card">
 
-  <h3>
-    Online Registration
-  </h3>
+          <span>🤝</span>
 
-  <p>
-    Support with online registrations and educational
-    applications.
-  </p>
+          <h3>
+            Guidance & Mentorship
+          </h3>
 
-  <a
-    href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20need%20online%20registration%20assistance."
-    target="_blank"
-    rel="noopener"
-  >
-    Get help
-  </a>
+          <p>
+            Get help making sense of your admission and
+            educational options.
+          </p>
 
-</article>
+          <a
+            href="https://wa.me/2349011582752"
+            target="_blank">
+            Talk to us
+          </a>
 
+        </article>
 
-<!-- BURSARIES -->
+      </div>
 
-<article class="service-card">
+    </section>
 
-  <span>💰</span>
 
-  <h3>
-    Bursaries & Grants
-  </h3>
+    <!-- ================= RESOURCES ================= -->
+    <section class="section" id="resources">
 
-  <p>
-    Discover funding opportunities and understand
-    application requirements.
-  </p>
+      <div class="section-heading">
 
-  <a href="#opportunities">
-    Explore
-  </a>
+        <span class="eyebrow">
+          RESOURCES
+        </span>
 
-</article>
+        <h2>
+          Build a smarter study journey
+        </h2>
 
+        <p>
+          These sections are ready to grow into full ELEVIQ
+          features as the platform develops.
+        </p>
 
-<!-- SCHOLARSHIPS -->
+      </div>
 
-<article class="service-card">
 
-  <span>🏆</span>
+      <div class="resources-grid">
 
-  <h3>
-    Scholarships
-  </h3>
+        <article class="resource-card">
+          <span>01</span>
+          <h3>CBT Practice</h3>
+          <p>
+            Practice questions, timed tests and
+            performance tracking.
+          </p>
+          <small>Coming as we build</small>
+        </article>
 
-  <p>
-    Find scholarship opportunities and guidance
-    for applications.
-  </p>
 
-  <a href="#opportunities">
-    Explore
-  </a>
+        <article class="resource-card">
+          <span>02</span>
+          <h3>Past Questions</h3>
+          <p>
+            Organised practice resources for important
+            examinations.
+          </p>
+          <small>Coming as we build</small>
+        </article>
 
-</article>
 
+        <article class="resource-card">
+          <span>03</span>
+          <h3>School & Course Guide</h3>
+          <p>
+            Compare schools, courses, requirements and
+            useful admission information.
+          </p>
+          <small>Coming as we build</small>
+        </article>
 
-<!-- GUIDANCE -->
 
-<article class="service-card">
+        <article class="resource-card">
+          <span>04</span>
+          <h3>Education Updates</h3>
+          <p>
+            Important admission, examination and scholarship
+            announcements.
+          </p>
+          <small>Coming as we build</small>
+        </article>
 
-  <span>🤝</span>
+      </div>
 
-  <h3>
-    Guidance & Mentorship
-  </h3>
+    </section>
 
-  <p>
-    Get help making sense of your admission and
-    educational options.
-  </p>
 
-  <a
-    href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20need%20educational%20guidance%20and%20mentorship."
-    target="_blank"
-    rel="noopener"
-  >
-    Talk to us
-  </a>
+    <!-- ================= ABOUT ================= -->
+    <section class="section about-section" id="about">
 
-</article>
+      <div class="about-content">
 
-  </div></section><!-- =========================
-     RESOURCES
-========================= --><section
-  id="resources"
-  class="section"
->  <div class="section-heading"><div>
+        <span class="eyebrow">
+          ABOUT ELEVIQ
+        </span>
 
-  <div class="section-kicker">
-    RESOURCES
-  </div>
+        <h2>
+          A platform built around the student's next step.
+        </h2>
 
-  <h2>
-    Build a smarter study journey
-  </h2>
+        <p>
+          ELEVIQ is an educational and opportunities platform
+          focused on helping students and young people discover
+          and access admissions, examinations, scholarships,
+          bursaries, grants, registrations and other useful
+          opportunities.
+        </p>
 
-  <p>
-    These sections are ready to grow into full ELEVIQ
-    features as the platform develops.
-  </p>
+        <p>
+          Our long-term goal is simple: reduce the stress of
+          searching for educational opportunities by bringing
+          useful information and practical assistance together
+          in one place.
+        </p>
 
-</div>
+        <a
+          href="https://wa.me/2349011582752"
+          target="_blank"
+          class="btn-primary">
+          Talk to ELEVIQ
+        </a>
 
-  </div>  <div class="resource-grid"><article class="resource-card">
+      </div>
 
-  <div class="resource-number">
-    01
-  </div>
 
-  <h3>
-    CBT Practice
-  </h3>
+      <div class="about-list">
 
-  <p>
-    Practice questions, timed tests and
-    performance tracking.
-  </p>
+        <h3>
+          What ELEVIQ is working toward
+        </h3>
 
-  <span>
-    Coming as we build
-  </span>
+        <p>✓ Easier opportunity discovery</p>
+        <p>✓ Clearer admission information</p>
+        <p>✓ Useful study resources</p>
+        <p>✓ Application assistance</p>
+        <p>✓ Student-focused digital tools</p>
 
-</article>
+      </div>
 
+    </section>
 
-<article class="resource-card">
 
-  <div class="resource-number">
-    02
-  </div>
+    <!-- ================= CONTACT ================= -->
+    <section class="contact-section" id="contact">
 
-  <h3>
-    Past Questions
-  </h3>
+      <div class="contact-content">
 
-  <p>
-    Organised practice resources for important
-    examinations.
-  </p>
+        <span class="eyebrow">
+          NEED HELP?
+        </span>
 
-  <span>
-    Coming as we build
-  </span>
+        <h2>
+          Let's help you find your next step.
+        </h2>
 
-</article>
+        <p>
+          Tell us what you want to do — admission guidance,
+          registration, scholarship information or another
+          educational opportunity.
+        </p>
 
+        <a
+          href="https://wa.me/2349011582752"
+          class="btn-primary"
+          target="_blank">
+          Chat on WhatsApp
+        </a>
 
-<article class="resource-card">
+        <p class="email">
+          eleviq1@gmail.com
+        </p>
 
-  <div class="resource-number">
-    03
-  </div>
+      </div>
 
-  <h3>
-    School & Course Guide
-  </h3>
+    </section>
 
-  <p>
-    Compare schools, courses, requirements and
-    useful admission information.
-  </p>
+  </main>
 
-  <span>
-    Coming as we build
-  </span>
 
-</article>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
 
+    <div class="footer-container">
 
-<article class="resource-card">
+      <div class="footer-brand">
 
-  <div class="resource-number">
-    04
-  </div>
+        <a href="index.html#home" class="footer-logo">
+          <img
+            src="eleviq-logo.png"
+            alt="ELEVIQ">
+        </a>
 
-  <h3>
-    Education Updates
+        <p>
+          Your smarter pathway to educational opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Explore</h4>
+
+        <a href="admissions.html">
+          Admissions
+        </a>
+
+        <a href="#opportunities">
+          Opportunities
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#resources">
+          Resources
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Company</h4>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+        <a href="mailto:eleviq1@gmail.com">
+          Email us
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Connect</h4>
+
+        <a
+          href="https://wa.me/2349011582752"
+          target="_blank">
+          WhatsApp
+        </a>
+
+        <a href="mailto:eleviq1@gmail.com">
+          eleviq1@gmail.com
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      © 2026 ELEVIQ. All rights reserved.
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+
+    function toggleMenu(force) {
+
+      const navLinks =
+        document.getElementById("navLinks");
+
+      const menuButton =
+        document.getElementById("menuButton");
+
+      const shouldOpen =
+        typeof force === "boolean"
+          ? force
+          : !navLinks.classList.contains("active");
+
+      navLinks.classList.toggle(
+        "active",
+        shouldOpen
+      );
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(shouldOpen)
+      );
+
+    }
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function(link) {
+
+        link.addEventListener(
+          "click",
+          function() {
+
+            toggleMenu(false);
+
+          }
+        );
+
+      });
+
+  </script>
+
+</body>
+          </html>ation Updates
   </h3>
 
   <p>
