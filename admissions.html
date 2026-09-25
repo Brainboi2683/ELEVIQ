@@ -1,532 +1,980 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8"><meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-  <title>Admissions | ELEVIQ</title>
-
-  <meta
-    name="description"
-    content="Find admission opportunities from universities, polytechnics and colleges across Nigeria.">
+  <title>Admissions | ELEVIQ</title><meta
+name="description"
+content="Find universities, polytechnics and colleges across Nigeria and access their official admission websites and portals.">
 
   <link
     rel="stylesheet"
-    href="style.css">
+    href="style.css"></head><body>  <!-- ================= NAVBAR ================= -->  <header class="navbar"><div class="nav-container">
 
-</head>
+  <a
+    href="index.html#home"
+    class="logo">
 
+    <img
+      src="eleviq-logo.png"
+      alt="ELEVIQ Logo">
 
-<body>
+  </a>
 
 
-  <!-- ================= NAVBAR ================= -->
+  <button
+    class="menu-button"
+    id="admissionMenuButton"
+    aria-label="Open menu"
+    aria-expanded="false">
 
-  <header class="navbar">
+    ☰
 
-    <div class="nav-container">
+  </button>
 
-      <a
-        href="index.html#home"
-        class="logo">
 
-        <img
-          src="eleviq-logo.png"
-          alt="ELEVIQ Logo">
+  <nav
+    class="nav-links"
+    id="admissionNavLinks">
 
-      </a>
+    <a href="index.html#home">
+      Home
+    </a>
 
+    <a href="admissions.html">
+      Admissions
+    </a>
 
-      <button
-        class="menu-button"
-        id="admissionMenuButton"
-        aria-label="Open menu"
-        aria-expanded="false">
+    <a href="index.html#opportunities">
+      Opportunities
+    </a>
 
-        ☰
+    <a href="index.html#services">
+      Services
+    </a>
 
-      </button>
+    <a href="index.html#resources">
+      Resources
+    </a>
 
+    <a href="index.html#about">
+      About
+    </a>
 
-      <nav
-        class="nav-links"
-        id="admissionNavLinks">
+    <a href="index.html#contact">
+      Contact
+    </a>
 
-        <a href="index.html#home">
-          Home
-        </a>
+    <a
+      href="https://wa.me/2349011582752"
+      class="nav-help"
+      target="_blank"
+      rel="noopener noreferrer">
 
-        <a href="admissions.html">
-          Admissions
-        </a>
+      Get Help
 
-        <a href="index.html#opportunities">
-          Opportunities
-        </a>
+    </a>
 
-        <a href="index.html#services">
-          Services
-        </a>
+  </nav>
 
-        <a href="index.html#resources">
-          Resources
-        </a>
+</div>
 
-        <a href="index.html#about">
-          About
-        </a>
+  </header>  <!-- ================= HERO ================= -->  <main><section class="admissions-hero">
 
-        <a href="index.html#contact">
-          Contact
-        </a>
+  <div class="section-heading">
 
-        <a
-          href="https://wa.me/2349011582752"
-          class="nav-help"
-          target="_blank">
+    <span class="eyebrow">
+      ELEVIQ ADMISSIONS
+    </span>
 
-          Get Help
+    <h1>
+      Find Your Next Admission Opportunity
+    </h1>
 
-        </a>
+    <p>
+      Search universities, polytechnics and colleges
+      across Nigeria. ELEVIQ helps you discover
+      institutions and takes you directly to their
+      official websites or admission portals.
+    </p>
 
-      </nav>
+  </div>
 
-    </div>
 
-  </header>
+  <!-- ================= SEARCH ================= -->
 
+  <div class="admission-search">
 
+    <input
+      type="text"
+      id="admissionSearch"
+      placeholder="Search school, programme or state..."
+      autocomplete="off">
 
-  <!-- ================= HERO ================= -->
+    <button
+      type="button"
+      id="admissionSearchButton">
 
-  <main>
+      Search
 
-    <section class="admissions-hero">
+    </button>
 
-      <div class="section-heading">
+  </div>
 
-        <span class="eyebrow">
-          ELEVIQ ADMISSIONS
-        </span>
 
-        <h1>
-          Find Your Next Admission Opportunity
-        </h1>
 
-        <p>
-          Search universities, polytechnics and colleges
-          across Nigeria. When you find an opportunity,
-          ELEVIQ takes you directly to the institution's
-          official website or admission portal.
-        </p>
+  <!-- ================= FILTERS ================= -->
 
-      </div>
+  <div class="admission-filters">
 
 
-      <!-- SEARCH -->
+    <!-- INSTITUTION -->
 
-      <div class="admission-search">
+    <select id="institutionFilter">
 
-        <input
-          type="text"
-          id="admissionSearch"
-          placeholder="Search school, programme, state or admission type..."
-          autocomplete="off">
+      <option value="">
+        Institution Type
+      </option>
 
-        <button
-          type="button"
-          id="admissionSearchButton">
+      <option value="university">
+        University
+      </option>
 
-          Search
+      <option value="polytechnic">
+        Polytechnic
+      </option>
 
-        </button>
+      <option value="college">
+        College
+      </option>
 
-      </div>
+    </select>
 
 
-      <!-- FILTERS -->
 
-      <div class="admission-filters">
+    <!-- OWNERSHIP -->
 
-        <select id="institutionFilter">
+    <select id="ownershipFilter">
 
-          <option value="">
-            Institution Type
-          </option>
+      <option value="">
+        Ownership
+      </option>
 
-          <option value="university">
-            University
-          </option>
+      <option value="federal">
+        Federal
+      </option>
 
-          <option value="polytechnic">
-            Polytechnic
-          </option>
+      <option value="state">
+        State
+      </option>
 
-          <option value="college">
-            College
-          </option>
+      <option value="private">
+        Private
+      </option>
 
-        </select>
+    </select>
 
 
-        <select id="ownershipFilter">
 
-          <option value="">
-            Ownership
-          </option>
+    <!-- STATE -->
 
-          <option value="federal">
-            Federal
-          </option>
+    <select id="stateFilter">
 
-          <option value="state">
-            State
-          </option>
+      <option value="">
+        All States
+      </option>
 
-          <option value="private">
-            Private
-          </option>
+    </select>
 
-        </select>
 
 
-        <select id="admissionTypeFilter">
+    <!-- ADMISSION TYPE -->
 
-          <option value="">
-            Admission Type
-          </option>
+    <select id="admissionTypeFilter">
 
-          <option value="utme">
-            UTME / DE
-          </option>
+      <option value="">
+        Admission Type
+      </option>
 
-          <option value="post-utme">
-            Post-UTME
-          </option>
+      <option value="utme">
+        UTME / DE
+      </option>
 
-          <option value="jupeb">
-            JUPEB
-          </option>
+      <option value="post-utme">
+        Post-UTME
+      </option>
 
-          <option value="pre-degree">
-            Pre-degree
-          </option>
+      <option value="jupeb">
+        JUPEB
+      </option>
 
-        </select>
+      <option value="pre-degree">
+        Pre-degree
+      </option>
 
+      <option value="nd">
+        ND / HND
+      </option>
 
-        <select id="statusFilter">
+      <option value="nce">
+        NCE
+      </option>
 
-          <option value="">
-            Status
-          </option>
+    </select>
 
-          <option value="open">
-            Open
-          </option>
 
-          <option value="closed">
-            Closed
-          </option>
 
-          <option value="check">
-            Check Portal
-          </option>
+    <!-- STATUS -->
 
-        </select>
+    <select id="statusFilter">
 
-      </div>
+      <option value="">
+        Status
+      </option>
 
-    </section>
+      <option value="open">
+        Open
+      </option>
 
+      <option value="closed">
+        Closed
+      </option>
 
+      <option value="check">
+        Check Portal
+      </option>
 
-    <!-- ================= ADMISSIONS ================= -->
+    </select>
 
-    <section class="section">
+  </div>
 
-      <div class="section-heading">
+</section>
 
-        <span class="eyebrow">
-          ADMISSION DATABASE
-        </span>
 
-        <h2>
-          Admission Opportunities
-        </h2>
 
-        <p>
-          Official links only. Always confirm requirements,
-          deadlines and application instructions on the
-          institution's official platform.
-        </p>
+<!-- ================= DATABASE ================= -->
 
-      </div>
+<section class="section">
 
+  <div class="section-heading">
 
-      <div
-        class="admission-result-count"
-        id="admissionResultCount">
+    <span class="eyebrow">
+      ADMISSION DATABASE
+    </span>
 
-        0 opportunities
+    <h2>
+      Find an Institution
+    </h2>
 
-      </div>
+    <p>
+      Search and filter institutions by type,
+      ownership and state. Always confirm current
+      admission requirements and deadlines on the
+      institution's official platform.
+    </p>
 
+  </div>
 
-      <div
-        class="admission-grid"
-        id="admissionGrid">
 
 
-        <!-- ================= LAUTECH ================= -->
+  <!-- RESULT COUNT -->
 
-        <article
-          class="admission-card"
-          data-name="LAUTECH"
-          data-type="university"
-          data-ownership="state"
-          data-admission="jupeb"
-          data-status="open"
-          data-search="lautech ladoke akintola university of technology ogbomoso oyo state jupeb foundation programme">
+  <div
+    class="admission-result-count"
+    id="admissionResultCount">
 
-          <div class="admission-status open">
-            Open
-          </div>
+    0 institutions
 
-          <span class="institution-type">
-            State University
-          </span>
+  </div>
 
-          <h3>
-            LAUTECH
-          </h3>
 
-          <h4>
-            JUPEB Programme
-          </h4>
 
-          <p>
-            📍 Ogbomoso, Oyo State
-          </p>
+  <!-- CARDS ARE GENERATED HERE -->
 
-          <p>
-            <strong>Admission Type:</strong>
-            JUPEB
-          </p>
+  <div
+    class="admission-grid"
+    id="admissionGrid">
+  </div>
 
-          <p>
-            <strong>Session:</strong>
-            2026/2027
-          </p>
 
-          <div class="admission-buttons">
 
-            <a
-              href="https://www.apply.lautech.edu.ng/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary">
+  <!-- NO RESULTS -->
 
-              Official Portal →
+  <div
+    id="noAdmissions"
+    class="no-results"
+    style="display:none;">
 
-            </a>
+    <h3>
+      No institutions found
+    </h3>
 
-            <a
-              href="https://lautech.edu.ng/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-secondary">
+    <p>
+      Try changing your search or filters.
+    </p>
 
-              Website
+  </div>
 
-            </a>
+</section>
 
-          </div>
 
-        </article>
 
+<!-- ================= GUIDANCE ================= -->
 
+<section class="contact-section">
 
-        <!-- ================= OAUSTECH ================= -->
+  <div class="contact-content">
 
-        <article
-          class="admission-card"
-          data-name="OAUSTECH"
-          data-type="university"
-          data-ownership="state"
-          data-admission="post-utme"
-          data-status="closed"
-          data-search="oaustech olusegun agagu university science technology okitipupa ondo state post utme">
+    <span class="eyebrow">
+      NEED HELP?
+    </span>
 
-          <div class="admission-status closed">
-            Closed
-          </div>
+    <h2>
+      Not sure which admission option is right for you?
+    </h2>
 
-          <span class="institution-type">
-            State University
-          </span>
+    <p>
+      Get admission guidance from ELEVIQ and understand
+      your available options before applying.
+    </p>
 
-          <h3>
-            OAUSTECH
-          </h3>
+    <a
+      href="https://wa.me/2349011582752"
+      class="btn-primary"
+      target="_blank"
+      rel="noopener noreferrer">
 
-          <h4>
-            2026/2027 Post-UTME
-          </h4>
+      Get Admission Guidance
 
-          <p>
-            📍 Okitipupa, Ondo State
-          </p>
+    </a>
 
-          <p>
-            <strong>Admission Type:</strong>
-            Post-UTME
-          </p>
+  </div>
 
-          <p>
-            <strong>Session:</strong>
-            2026/2027
-          </p>
+</section>
 
-          <div class="admission-buttons">
+  </main>  <!-- ================= FOOTER ================= -->  <footer class="footer"><div class="footer-container">
 
-            <a
-              href="https://portal.oaustech.edu.ng/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary">
 
-              Official Portal →
+  <div class="footer-brand">
 
-            </a>
+    <a
+      href="index.html"
+      class="footer-logo">
 
-            <a
-              href="https://oaustech.edu.ng/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-secondary">
+      <img
+        src="eleviq-logo.png"
+        alt="ELEVIQ">
 
-              Website
+    </a>
 
-            </a>
+    <p>
+      Your smarter pathway to educational opportunities.
+    </p>
 
-          </div>
+  </div>
 
-        </article>
 
 
+  <div class="footer-column">
 
-        <!-- ================= FUTMINNA ================= -->
+    <h4>
+      Explore
+    </h4>
 
-        <article
-          class="admission-card"
-          data-name="FUTMINNA"
-          data-type="university"
-          data-ownership="federal"
-          data-admission="utme"
-          data-status="open"
-          data-search="futminna federal university technology minna niger state undergraduate utme direct entry">
+    <a href="index.html#opportunities">
+      Opportunities
+    </a>
 
-          <div class="admission-status open">
-            Open
-          </div>
+    <a href="admissions.html">
+      Admissions
+    </a>
 
-          <span class="institution-type">
-            Federal University
-          </span>
+    <a href="index.html#services">
+      Services
+    </a>
 
-          <h3>
-            FUTMINNA
-          </h3>
+    <a href="index.html#resources">
+      Resources
+    </a>
 
-          <h4>
-            Undergraduate Admission
-          </h4>
+  </div>
 
-          <p>
-            📍 Minna, Niger State
-          </p>
 
-          <p>
-            <strong>Admission Type:</strong>
-            UTME / DE
-          </p>
 
-          <p>
-            <strong>Session:</strong>
-            2026/2027
-          </p>
+  <div class="footer-column">
 
-          <div class="admission-buttons">
+    <h4>
+      Company
+    </h4>
 
-            <a
-              href="https://eportal.futminna.edu.ng/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary">
+    <a href="index.html#about">
+      About
+    </a>
 
-              Official Portal →
+    <a href="index.html#contact">
+      Contact
+    </a>
 
-            </a>
+    <a href="mailto:eleviq1@gmail.com">
+      Email us
+    </a>
 
-            <a
-              href="https://futminna.edu.ng/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-secondary">
+  </div>
 
-              Website
 
-            </a>
 
-          </div>
+  <div class="footer-column">
 
-        </article>
+    <h4>
+      Connect
+    </h4>
 
+    <a
+      href="https://wa.me/2349011582752"
+      target="_blank"
+      rel="noopener noreferrer">
 
+      WhatsApp
 
-        <!-- ================= ABU ================= -->
+    </a>
 
-        <article
-          class="admission-card"
-          data-name="Ahmadu Bello University"
-          data-type="university"
-          data-ownership="federal"
-          data-admission="utme"
-          data-status="open"
-          data-search="abu ahmadu bello university zaria kaduna state post utme direct entry">
+    <a href="mailto:eleviq1@gmail.com">
+      eleviq1@gmail.com
+    </a>
 
-          <div class="admission-status open">
-            Open
-          </div>
+  </div>
 
-          <span class="institution-type">
-            Federal University
-          </span>
+</div>
 
-          <h3>
-            Ahmadu Bello University
-          </h3>
 
-          <h4>
-            Post-UTME / Direct Entry
-          </h4>
 
-          <p>
-            📍 Zaria, Kaduna State
-          </p>
+<div class="footer-bottom">
 
-          <p>
-            <strong>Admission Type:</strong>
-            UTME / DE
-          </p>
+  © 2026 ELEVIQ. All rights reserved.
 
-          <p>
+</div>
+
+  </footer>  <!-- ================= JAVASCRIPT ================= -->  <script>
+
+
+    /* =====================================================
+       ELEVIQ INSTITUTION DATABASE
+       ===================================================== */
+
+    const institutions = [
+
+      /* ================= FEDERAL UNIVERSITIES ================= */
+
+      {
+        name: "Ahmadu Bello University",
+        shortName: "ABU",
+        type: "university",
+        ownership: "federal",
+        state: "Kaduna",
+        location: "Zaria",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://portal.abu.edu.ng/",
+        website: "https://abu.edu.ng/"
+      },
+
+
+      {
+        name: "Federal University of Technology, Minna",
+        shortName: "FUTMINNA",
+        type: "university",
+        ownership: "federal",
+        state: "Niger",
+        location: "Minna",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://eportal.futminna.edu.ng/ePortal_V2/appl/index.php",
+        website: "https://futminna.edu.ng/"
+      },
+
+
+      {
+        name: "University of Abuja",
+        shortName: "UNIABUJA",
+        type: "university",
+        ownership: "federal",
+        state: "FCT",
+        location: "Abuja",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://portal.uniabuja.edu.ng/",
+        website: "https://www.uniabuja.edu.ng/"
+      },
+
+
+      {
+        name: "University of Lagos",
+        shortName: "UNILAG",
+        type: "university",
+        ownership: "federal",
+        state: "Lagos",
+        location: "Akoka",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.unilag.edu.ng/",
+        website: "https://unilag.edu.ng/"
+      },
+
+
+      {
+        name: "University of Ibadan",
+        shortName: "UI",
+        type: "university",
+        ownership: "federal",
+        state: "Oyo",
+        location: "Ibadan",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.ui.edu.ng/",
+        website: "https://ui.edu.ng/"
+      },
+
+
+      {
+        name: "University of Ilorin",
+        shortName: "UNILORIN",
+        type: "university",
+        ownership: "federal",
+        state: "Kwara",
+        location: "Ilorin",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://portal.unilorin.edu.ng/",
+        website: "https://www.unilorin.edu.ng/"
+      },
+
+
+      {
+        name: "Obafemi Awolowo University",
+        shortName: "OAU",
+        type: "university",
+        ownership: "federal",
+        state: "Osun",
+        location: "Ile-Ife",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.oauife.edu.ng/",
+        website: "https://oauife.edu.ng/"
+      },
+
+
+      {
+        name: "University of Benin",
+        shortName: "UNIBEN",
+        type: "university",
+        ownership: "federal",
+        state: "Edo",
+        location: "Benin City",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://waeup.uniben.edu/",
+        website: "https://uniben.edu/"
+      },
+
+
+      {
+        name: "University of Nigeria, Nsukka",
+        shortName: "UNN",
+        type: "university",
+        ownership: "federal",
+        state: "Enugu",
+        location: "Nsukka",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.unn.edu.ng/",
+        website: "https://www.unn.edu.ng/"
+      },
+
+
+      {
+        name: "University of Port Harcourt",
+        shortName: "UNIPORT",
+        type: "university",
+        ownership: "federal",
+        state: "Rivers",
+        location: "Port Harcourt",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://utmedetails.uniport.edu.ng/",
+        website: "https://www.uniport.edu.ng/"
+      },
+
+
+      {
+        name: "University of Calabar",
+        shortName: "UNICAL",
+        type: "university",
+        ownership: "federal",
+        state: "Cross River",
+        location: "Calabar",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://portal.unical.edu.ng/",
+        website: "https://www.unical.edu.ng/"
+      },
+
+
+      {
+        name: "University of Uyo",
+        shortName: "UNIUYO",
+        type: "university",
+        ownership: "federal",
+        state: "Akwa Ibom",
+        location: "Uyo",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://uniuyo.edu.ng/",
+        website: "https://uniuyo.edu.ng/"
+      },
+
+
+      /* ================= STATE UNIVERSITIES ================= */
+
+      {
+        name: "Lagos State University",
+        shortName: "LASU",
+        type: "university",
+        ownership: "state",
+        state: "Lagos",
+        location: "Ojo",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://services.lidc.lasu.edu.ng/",
+        website: "https://lasu.edu.ng/"
+      },
+
+
+      {
+        name: "Ladoke Akintola University of Technology",
+        shortName: "LAUTECH",
+        type: "university",
+        ownership: "state",
+        state: "Oyo",
+        location: "Ogbomoso",
+        admission: "jupeb",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://www.apply.lautech.edu.ng/",
+        website: "https://lautech.edu.ng/"
+      },
+
+
+      {
+        name: "Ambrose Alli University",
+        shortName: "AAU",
+        type: "university",
+        ownership: "state",
+        state: "Edo",
+        location: "Ekpoma",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://aaue.waeup.org/",
+        website: "https://aauekpoma.edu.ng/"
+      },
+
+
+      {
+        name: "Adekunle Ajasin University",
+        shortName: "AAUA",
+        type: "university",
+        ownership: "state",
+        state: "Ondo",
+        location: "Akungba-Akoko",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://eportal.aaua.edu.ng/",
+        website: "https://aaua.edu.ng/"
+      },
+
+
+      {
+        name: "Olabisi Onabanjo University",
+        shortName: "OOU",
+        type: "university",
+        ownership: "state",
+        state: "Ogun",
+        location: "Ago-Iwoye",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://putme.oouagoiwoye.edu.ng/",
+        website: "https://oouagoiwoye.edu.ng/"
+      },
+
+
+      {
+        name: "Osun State University",
+        shortName: "UNIOSUN",
+        type: "university",
+        ownership: "state",
+        state: "Osun",
+        location: "Osogbo",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.uniosun.edu.ng/",
+        website: "https://uniosun.edu.ng/"
+      },
+
+
+      {
+        name: "Nasarawa State University",
+        shortName: "NSUK",
+        type: "university",
+        ownership: "state",
+        state: "Nasarawa",
+        location: "Keffi",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://ug.nsuk.edu.ng/",
+        website: "https://nsuk.edu.ng/"
+      },
+
+
+      {
+        name: "Prince Abubakar Audu University",
+        shortName: "PAAU",
+        type: "university",
+        ownership: "state",
+        state: "Kogi",
+        location: "Anyigba",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://portal.ksu.edu.ng/",
+        website: "https://ksu.edu.ng/"
+      },
+
+
+      {
+        name: "Niger Delta University",
+        shortName: "NDU",
+        type: "university",
+        ownership: "state",
+        state: "Bayelsa",
+        location: "Yenagoa",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://portal.ndu.edu.ng/",
+        website: "https://ndu.edu.ng/"
+      },
+
+
+      {
+        name: "Delta State University",
+        shortName: "DELSU",
+        type: "university",
+        ownership: "state",
+        state: "Delta",
+        location: "Abraka",
+        admission: "post-utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://portal.delsu.edu.ng/",
+        website: "https://delsu.edu.ng/"
+      },
+
+
+      /* ================= PRIVATE UNIVERSITIES ================= */
+
+      {
+        name: "Baze University",
+        shortName: "BAZE",
+        type: "university",
+        ownership: "private",
+        state: "FCT",
+        location: "Abuja",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://bazeuniversity.edu.ng/admissions/",
+        website: "https://bazeuniversity.edu.ng/"
+      },
+
+
+      {
+        name: "Nile University of Nigeria",
+        shortName: "NILE",
+        type: "university",
+        ownership: "private",
+        state: "FCT",
+        location: "Abuja",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://nileuniversity.edu.ng/admissions/",
+        website: "https://nileuniversity.edu.ng/"
+      },
+
+
+      {
+        name: "Veritas University",
+        shortName: "VERITAS",
+        type: "university",
+        ownership: "private",
+        state: "FCT",
+        location: "Abuja",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://veritas.edu.ng/admissions/",
+        website: "https://veritas.edu.ng/"
+      },
+
+
+      {
+        name: "Bingham University",
+        shortName: "BINGHAM",
+        type: "university",
+        ownership: "private",
+        state: "Nasarawa",
+        location: "New Karu",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://apply.binghamuni.edu.ng/",
+        website: "https://binghamuni.edu.ng/"
+      },
+
+
+      {
+        name: "Afe Babalola University",
+        shortName: "ABUAD",
+        type: "university",
+        ownership: "private",
+        state: "Ekiti",
+        location: "Ado-Ekiti",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.abuad.edu.ng/",
+        website: "https://abuad.edu.ng/"
+      },
+
+
+      {
+        name: "Benson Idahosa University",
+        shortName: "BIU",
+        type: "university",
+        ownership: "private",
+        state: "Edo",
+        location: "Benin City",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.biu.edu.ng/",
+        website: "https://biu.edu.ng/"
+      },
+
+
+      {
+        name: "Redeemer's University",
+        shortName: "RUN",
+        type: "university",
+        ownership: "private",
+        state: "Osun",
+        location: "Ede",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.run.edu.ng/",
+        website: "https://run.edu.ng/"
+      },
+
+
+      {
+        name: "Lead City University",
+        shortName: "LCU",
+        type: "university",
+        ownership: "private",
+        state: "Oyo",
+        location: "Ibadan",
+        admission: "utme",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admissions.lcu.edu.ng/",
+        website: "https://lcu.edu.ng/"
+      },
+
+
+      /* ================= POLYTECHNICS ================= */
+
+      {
+        name: "Yaba College of Technology",
+        shortName: "YABATECH",
+        type: "polytechnic",
+        ownership: "federal",
+        state: "Lagos",
+        location: "Yaba",
+        admission: "nd",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://admission.yabatech.edu.ng/",
+        website: "https://yabatech.edu.ng/"
+      },
+
+
+      {
+        name: "Federal Polytechnic, Bida",
+        shortName: "FEDPOLY BIDA",
+        type: "polytechnic",
+        ownership: "federal",
+        state: "Niger",
+        location: "Bida",
+        admission: "nd",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://eportal.fedpolybida.edu.ng/",
+        website: "https://fedpolybida.edu.ng/"
+      },
+
+
+      {
+        name: "Federal Polytechnic, Nekede",
+        shortName: "FEDPOLY NEKEDE",
+        type: "polytechnic",
+        ownership: "federal",
+        state: "Imo",
+        location: "Owerri",
+        admission: "nd",
+        status: "check",
+        session: "2026/2027",
+        portal: "https://ndapplication.fpno.edu.ng/",
+        website: "https://fpno.edu.ng/"
+      },
+
+
+      {
+        name: "Auchi Polytechnic",
+        shortName: "AUCHI POLY",
+        type: "polytechnic",
+        ownership: "federal",
+        state: "Edo",
+        location: "Auchi",
+        admission: "nd",
+        status: "check",
+        session: "20
             <strong>Session:</strong>
             2026/2027
           </p>
