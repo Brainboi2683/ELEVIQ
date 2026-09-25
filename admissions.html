@@ -1,515 +1,1061 @@
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8"><meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
-«»
-
-<meta
-name="description"
-content="Find Nigerian university, polytechnic and college admission opportunities through ELEVIQ. Access official school websites and admission portals."
-
-«»
-
-<meta
-name="keywords"
-content="Nigeria admissions, Nigerian universities, JAMB, Post UTME, Direct Entry, JUPEB, pre-degree, admission portal, ELEVIQ"
-
-«»
-
-  <title>Admissions | ELEVIQ</title>  <link rel="stylesheet" href="style.css">  <style>
-
-    /* =========================================
-       ADMISSIONS PAGE
-    ========================================= */
-
-    .admissions-page {
-      background: #f7f9fc;
-      min-height: 100vh;
-    }
-
-    .admissions-hero {
-      padding: 100px 20px 60px;
-      text-align: center;
-      background: linear-gradient(
-        135deg,
-        #061a3a,
-        #0b3d91
-      );
-      color: white;
-    }
-
-    .admissions-hero .section-tag {
-      display: inline-block;
-      margin-bottom: 15px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      color: #8ec5ff;
-    }
-
-    .admissions-hero h1 {
-      max-width: 850px;
-      margin: 0 auto 18px;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      line-height: 1.1;
-    }
-
-    .admissions-hero h1 span {
-      color: #67b7ff;
-    }
-
-    .admissions-hero p {
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.7;
-      opacity: .9;
-    }
-
-    .admissions-container {
-      width: min(1200px, 92%);
-      margin: 0 auto;
-      padding: 50px 0 80px;
-    }
-
-    /* =========================================
-       SEARCH
-    ========================================= */
-
-    .admission-search-wrapper {
-      margin-top: -30px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .admission-search-box {
-      display: flex;
-      gap: 10px;
-      background: white;
-      padding: 10px;
-      border-radius: 14px;
-      box-shadow: 0 12px 35px rgba(0,0,0,.10);
-    }
-
-    .admission-search-box input {
-      flex: 1;
-      min-width: 0;
-      border: 0;
-      outline: none;
-      padding: 15px;
-      font-size: 15px;
-      background: transparent;
-    }
-
-    .admission-search-box button {
-      border: 0;
-      border-radius: 10px;
-      padding: 0 25px;
-      background: #0b5ed7;
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .admission-search-box button:hover {
-      opacity: .9;
-    }
-
-    /* =========================================
-       FILTERS
-    ========================================= */
-
-    .admission-filters {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin: 25px 0 35px;
-    }
-
-    .admission-filters select {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #dce3ec;
-      border-radius: 10px;
-      background: white;
-      color: #243447;
-      outline: none;
-    }
-
-    /* =========================================
-       DATABASE HEADER
-    ========================================= */
-
-    .database-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 25px;
-    }
-
-    .database-header h2 {
-      margin: 0 0 5px;
-    }
-
-    .database-header p {
-      margin: 0;
-      color: #6c757d;
-    }
-
-    .result-count {
-      white-space: nowrap;
-      font-weight: 700;
-      color: #0b5ed7;
-    }
-
-    /* =========================================
-       ADMISSION GRID
-    ========================================= */
-
-    .admissions-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .admission-card {
-      background: white;
-      border: 1px solid #e4e9ef;
-      border-radius: 16px;
-      padding: 24px;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .admission-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
-    }
-
-    .admission-card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .admission-status {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 30px;
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .status-open {
-      background: #e8f8ee;
-      color: #16833b;
-    }
-
-    .status-closed {
-      background: #f1f3f5;
-      color: #6c757d;
-    }
-
-    .status-check {
-      background: #fff4d6;
-      color: #9a6b00;
-    }
-
-    .institution-type {
-      color: #6c757d;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .admission-card h3 {
-      margin: 0 0 7px;
-      font-size: 21px;
-      color: #10233f;
-    }
-
-    .admission-title {
-      margin: 0 0 12px;
-      font-weight: 700;
-      color: #0b5ed7;
-    }
-
-    .admission-location {
-      color: #687587;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .admission-info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .admission-info div {
-      background: #f7f9fc;
-      padding: 12px;
-      border-radius: 9px;
-    }
-
-    .admission-info small {
-      display: block;
-      color: #7a8594;
-      font-size: 11px;
-      margin-bottom: 5px;
-    }
-
-    .admission-info strong {
-      font-size: 13px;
-      color: #243447;
-    }
-
-    .admission-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .admission-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 15px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .official-btn {
-      background: #0b5ed7;
-      color: white;
-      flex: 1;
-    }
-
-    .website-btn {
-      border: 1px solid #d7dee8;
-      color: #243447;
-      background: white;
-    }
-
-    /* =========================================
-       EMPTY STATE
-    ========================================= */
-
-    .no-admission-results {
-      display: none;
-      text-align: center;
-      background: white;
-      padding: 50px 20px;
-      border-radius: 16px;
-      border: 1px solid #e4e9ef;
-    }
-
-    .no-admission-results h3 {
-      margin-bottom: 8px;
-    }
-
-    .no-admission-results p {
-      color: #6c757d;
-    }
-
-    /* =========================================
-       INFORMATION NOTICE
-    ========================================= */
-
-    .admission-notice {
-      margin-top: 45px;
-      padding: 25px;
-      border-radius: 14px;
-      background: #eef6ff;
-      border: 1px solid #cfe4ff;
-    }
-
-    .admission-notice h3 {
-      margin-top: 0;
-      color: #0b3d91;
-    }
-
-    .admission-notice p {
-      margin-bottom: 0;
-      line-height: 1.7;
-      color: #41536b;
-    }
-
-    /* =========================================
-       GUIDANCE
-    ========================================= */
-
-    .admission-guidance {
-      margin-top: 45px;
-      padding: 35px;
-      border-radius: 18px;
-      background: linear-gradient(
-        135deg,
-        #0b3d91,
-        #0b5ed7
-      );
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .admission-guidance h2 {
-      margin: 8px 0;
-    }
-
-    .admission-guidance p {
-      margin: 0;
-      opacity: .9;
-      line-height: 1.6;
-    }
-
-    .guidance-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 20px;
-      border-radius: 10px;
-      background: white;
-      color: #0b3d91;
-      text-decoration: none;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    /* =========================================
-       MOBILE
-    ========================================= */
-
-    @media (max-width: 900px) {
-
-      .admissions-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .admission-filters {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-    }
-
-    @media (max-width: 650px) {
-
-      .admissions-hero {
-        padding: 80px 18px 50px;
-      }
-
-      .admission-search-box {
-        flex-direction: column;
-      }
-
-      .admission-search-box button {
-        min-height: 48px;
-      }
-
-      .admission-filters {
-        grid-template-columns: 1fr;
-      }
-
-      .admissions-list {
-        grid-template-columns: 1fr;
-      }
-
-      .database-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .admission-guidance {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .guidance-btn {
-        width: 100%;
-      }
-
-    }
-
-  </style></head><body class="admissions-page"><!-- =========================================
-     NAVIGATION
-========================================= --><header class="navbar"><a
-class="logo"
-href="index.html#home"
-aria-label="ELEVIQ home"
-
-«»
-
-<img
-  src="eleviq-logo.png"
-  alt="ELEVIQ"
->
-
-  </a>  <nav
-    class="nav-links"
-    id="navLinks"
-  ><a href="index.html#home">
-  Home
-</a>
-
-<a
-  href="admissions.html"
-  class="active"
->
-  Admissions
-</a>
-
-<a href="index.html#opportunities">
-  Opportunities
-</a>
-
-<a href="index.html#services">
-  Services
-</a>
-
-<a href="index.html#resources">
-  Resources
-</a>
-
-<a href="index.html#about">
-  About
-</a>
-
-<a href="index.html#contact">
-  Contact
-</a>
-
-  </nav>  <div class="nav-actions"><a
-  class="login-link"
-  href="index.html#contact"
->
-  Get Help
-</a>
-
-<button
-  class="menu-button"
-  id="menuButton"
-  aria-label="Open menu"
-  aria-expanded="false"
-  type="button"
->
-  ☰
-</button>
-
-  </div></header><main><!-- =========================================
-     HERO
-========================================= --><section class="admissions-hero">  <span class="section-tag">
-    ELEVIQ ADMISSIONS
-  </span>  <h1>
-    Find Your Next
-    <span>Admission Opportunity</span>
-  </h1>  <p>
-    Search universities, polytechnics and colleges across Nigeria.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Admissions | ELEVIQ</title>
+
+  <meta
+    name="description"
+    content="Find admission opportunities from universities, polytechnics and colleges across Nigeria.">
+
+  <link
+    rel="stylesheet"
+    href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- ================= NAVBAR ================= -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a
+        href="index.html#home"
+        class="logo">
+
+        <img
+          src="eleviq-logo.png"
+          alt="ELEVIQ Logo">
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="admissionMenuButton"
+        aria-label="Open menu"
+        aria-expanded="false">
+
+        ☰
+
+      </button>
+
+
+      <nav
+        class="nav-links"
+        id="admissionNavLinks">
+
+        <a href="index.html#home">
+          Home
+        </a>
+
+        <a href="admissions.html">
+          Admissions
+        </a>
+
+        <a href="index.html#opportunities">
+          Opportunities
+        </a>
+
+        <a href="index.html#services">
+          Services
+        </a>
+
+        <a href="index.html#resources">
+          Resources
+        </a>
+
+        <a href="index.html#about">
+          About
+        </a>
+
+        <a href="index.html#contact">
+          Contact
+        </a>
+
+        <a
+          href="https://wa.me/2349011582752"
+          class="nav-help"
+          target="_blank">
+
+          Get Help
+
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="admissions-hero">
+
+      <div class="section-heading">
+
+        <span class="eyebrow">
+          ELEVIQ ADMISSIONS
+        </span>
+
+        <h1>
+          Find Your Next Admission Opportunity
+        </h1>
+
+        <p>
+          Search universities, polytechnics and colleges
+          across Nigeria. When you find an opportunity,
+          ELEVIQ takes you directly to the institution's
+          official website or admission portal.
+        </p>
+
+      </div>
+
+
+      <!-- SEARCH -->
+
+      <div class="admission-search">
+
+        <input
+          type="text"
+          id="admissionSearch"
+          placeholder="Search school, programme, state or admission type..."
+          autocomplete="off">
+
+        <button
+          type="button"
+          id="admissionSearchButton">
+
+          Search
+
+        </button>
+
+      </div>
+
+
+      <!-- FILTERS -->
+
+      <div class="admission-filters">
+
+        <select id="institutionFilter">
+
+          <option value="">
+            Institution Type
+          </option>
+
+          <option value="university">
+            University
+          </option>
+
+          <option value="polytechnic">
+            Polytechnic
+          </option>
+
+          <option value="college">
+            College
+          </option>
+
+        </select>
+
+
+        <select id="ownershipFilter">
+
+          <option value="">
+            Ownership
+          </option>
+
+          <option value="federal">
+            Federal
+          </option>
+
+          <option value="state">
+            State
+          </option>
+
+          <option value="private">
+            Private
+          </option>
+
+        </select>
+
+
+        <select id="admissionTypeFilter">
+
+          <option value="">
+            Admission Type
+          </option>
+
+          <option value="utme">
+            UTME / DE
+          </option>
+
+          <option value="post-utme">
+            Post-UTME
+          </option>
+
+          <option value="jupeb">
+            JUPEB
+          </option>
+
+          <option value="pre-degree">
+            Pre-degree
+          </option>
+
+        </select>
+
+
+        <select id="statusFilter">
+
+          <option value="">
+            Status
+          </option>
+
+          <option value="open">
+            Open
+          </option>
+
+          <option value="closed">
+            Closed
+          </option>
+
+          <option value="check">
+            Check Portal
+          </option>
+
+        </select>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= ADMISSIONS ================= -->
+
+    <section class="section">
+
+      <div class="section-heading">
+
+        <span class="eyebrow">
+          ADMISSION DATABASE
+        </span>
+
+        <h2>
+          Admission Opportunities
+        </h2>
+
+        <p>
+          Official links only. Always confirm requirements,
+          deadlines and application instructions on the
+          institution's official platform.
+        </p>
+
+      </div>
+
+
+      <div
+        class="admission-result-count"
+        id="admissionResultCount">
+
+        0 opportunities
+
+      </div>
+
+
+      <div
+        class="admission-grid"
+        id="admissionGrid">
+
+
+        <!-- ================= LAUTECH ================= -->
+
+        <article
+          class="admission-card"
+          data-name="LAUTECH"
+          data-type="university"
+          data-ownership="state"
+          data-admission="jupeb"
+          data-status="open"
+          data-search="lautech ladoke akintola university of technology ogbomoso oyo state jupeb foundation programme">
+
+          <div class="admission-status open">
+            Open
+          </div>
+
+          <span class="institution-type">
+            State University
+          </span>
+
+          <h3>
+            LAUTECH
+          </h3>
+
+          <h4>
+            JUPEB Programme
+          </h4>
+
+          <p>
+            📍 Ogbomoso, Oyo State
+          </p>
+
+          <p>
+            <strong>Admission Type:</strong>
+            JUPEB
+          </p>
+
+          <p>
+            <strong>Session:</strong>
+            2026/2027
+          </p>
+
+          <div class="admission-buttons">
+
+            <a
+              href="https://www.apply.lautech.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary">
+
+              Official Portal →
+
+            </a>
+
+            <a
+              href="https://lautech.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary">
+
+              Website
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ================= OAUSTECH ================= -->
+
+        <article
+          class="admission-card"
+          data-name="OAUSTECH"
+          data-type="university"
+          data-ownership="state"
+          data-admission="post-utme"
+          data-status="closed"
+          data-search="oaustech olusegun agagu university science technology okitipupa ondo state post utme">
+
+          <div class="admission-status closed">
+            Closed
+          </div>
+
+          <span class="institution-type">
+            State University
+          </span>
+
+          <h3>
+            OAUSTECH
+          </h3>
+
+          <h4>
+            2026/2027 Post-UTME
+          </h4>
+
+          <p>
+            📍 Okitipupa, Ondo State
+          </p>
+
+          <p>
+            <strong>Admission Type:</strong>
+            Post-UTME
+          </p>
+
+          <p>
+            <strong>Session:</strong>
+            2026/2027
+          </p>
+
+          <div class="admission-buttons">
+
+            <a
+              href="https://portal.oaustech.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary">
+
+              Official Portal →
+
+            </a>
+
+            <a
+              href="https://oaustech.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary">
+
+              Website
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ================= FUTMINNA ================= -->
+
+        <article
+          class="admission-card"
+          data-name="FUTMINNA"
+          data-type="university"
+          data-ownership="federal"
+          data-admission="utme"
+          data-status="open"
+          data-search="futminna federal university technology minna niger state undergraduate utme direct entry">
+
+          <div class="admission-status open">
+            Open
+          </div>
+
+          <span class="institution-type">
+            Federal University
+          </span>
+
+          <h3>
+            FUTMINNA
+          </h3>
+
+          <h4>
+            Undergraduate Admission
+          </h4>
+
+          <p>
+            📍 Minna, Niger State
+          </p>
+
+          <p>
+            <strong>Admission Type:</strong>
+            UTME / DE
+          </p>
+
+          <p>
+            <strong>Session:</strong>
+            2026/2027
+          </p>
+
+          <div class="admission-buttons">
+
+            <a
+              href="https://eportal.futminna.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary">
+
+              Official Portal →
+
+            </a>
+
+            <a
+              href="https://futminna.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary">
+
+              Website
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ================= ABU ================= -->
+
+        <article
+          class="admission-card"
+          data-name="Ahmadu Bello University"
+          data-type="university"
+          data-ownership="federal"
+          data-admission="utme"
+          data-status="open"
+          data-search="abu ahmadu bello university zaria kaduna state post utme direct entry">
+
+          <div class="admission-status open">
+            Open
+          </div>
+
+          <span class="institution-type">
+            Federal University
+          </span>
+
+          <h3>
+            Ahmadu Bello University
+          </h3>
+
+          <h4>
+            Post-UTME / Direct Entry
+          </h4>
+
+          <p>
+            📍 Zaria, Kaduna State
+          </p>
+
+          <p>
+            <strong>Admission Type:</strong>
+            UTME / DE
+          </p>
+
+          <p>
+            <strong>Session:</strong>
+            2026/2027
+          </p>
+
+          <div class="admission-buttons">
+
+            <a
+              href="https://portal.abu.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary">
+
+              Official Portal →
+
+            </a>
+
+            <a
+              href="https://abu.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary">
+
+              Website
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ================= UNIVERSITY OF IBADAN ================= -->
+
+        <article
+          class="admission-card"
+          data-name="University of Ibadan"
+          data-type="university"
+          data-ownership="federal"
+          data-admission="utme"
+          data-status="closed"
+          data-search="university ibadan ui oyo state screening utme direct entry">
+
+          <div class="admission-status closed">
+            Closed
+          </div>
+
+          <span class="institution-type">
+            Federal University
+          </span>
+
+          <h3>
+            University of Ibadan
+          </h3>
+
+          <h4>
+            2026/2027 Screening
+          </h4>
+
+          <p>
+            📍 Ibadan, Oyo State
+          </p>
+
+          <p>
+            <strong>Admission Type:</strong>
+            UTME / DE
+          </p>
+
+          <p>
+            <strong>Session:</strong>
+            2026/2027
+          </p>
+
+          <div class="admission-buttons">
+
+            <a
+              href="https://admissions.ui.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary">
+
+              Official Portal →
+
+            </a>
+
+            <a
+              href="https://ui.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary">
+
+              Website
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ================= UNIVERSITY OF ILORIN ================= -->
+
+        <article
+          class="admission-card"
+          data-name="University of Ilorin"
+          data-type="university"
+          data-ownership="federal"
+          data-admission="utme"
+          data-status="check"
+          data-search="unilorin university ilorin kwara state pre admission screening utme direct entry">
+
+          <div class="admission-status check">
+            Check Portal
+          </div>
+
+          <span class="institution-type">
+            Federal University
+          </span>
+
+          <h3>
+            University of Ilorin
+          </h3>
+
+          <h4>
+            2026/2027 Pre-Admission Screening
+          </h4>
+
+          <p>
+            📍 Ilorin, Kwara State
+          </p>
+
+          <p>
+            <strong>Admission Type:</strong>
+            UTME / DE
+          </p>
+
+          <p>
+            <strong>Session:</strong>
+            2026/2027
+          </p>
+
+          <div class="admission-buttons">
+
+            <a
+              href="https://portal.unilorin.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary">
+
+              Official Portal →
+
+            </a>
+
+            <a
+              href="https://www.unilorin.edu.ng/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary">
+
+              Website
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <!-- NO RESULTS -->
+
+      <div
+        id="noAdmissions"
+        class="no-results"
+        style="display:none;">
+
+        <h3>
+          No admission opportunities found
+        </h3>
+
+        <p>
+          Try changing your search or filters.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= GUIDANCE ================= -->
+
+    <section class="contact-section">
+
+      <div class="contact-content">
+
+        <span class="eyebrow">
+          NEED HELP?
+        </span>
+
+        <h2>
+          Not sure which admission option is right for you?
+        </h2>
+
+        <p>
+          Get guidance from ELEVIQ and understand your available
+          admission options before you apply.
+        </p>
+
+        <a
+          href="https://wa.me/2349011582752"
+          class="btn-primary"
+          target="_blank">
+
+          Get Admission Guidance
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="footer-logo">
+
+          <img
+            src="eleviq-logo.png"
+            alt="ELEVIQ">
+
+        </a>
+
+        <p>
+          Your smarter pathway to educational opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          Explore
+        </h4>
+
+        <a href="index.html#opportunities">
+          Opportunities
+        </a>
+
+        <a href="admissions.html">
+          Admissions
+        </a>
+
+        <a href="index.html#services">
+          Services
+        </a>
+
+        <a href="index.html#resources">
+          Resources
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          Company
+        </h4>
+
+        <a href="index.html#about">
+          About
+        </a>
+
+        <a href="index.html#contact">
+          Contact
+        </a>
+
+        <a href="mailto:eleviq1@gmail.com">
+          Email us
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          Connect
+        </h4>
+
+        <a
+          href="https://wa.me/2349011582752"
+          target="_blank">
+
+          WhatsApp
+
+        </a>
+
+        <a href="mailto:eleviq1@gmail.com">
+          eleviq1@gmail.com
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      © 2026 ELEVIQ. All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ================= ADMISSIONS JAVASCRIPT ================= -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+        const cards =
+          Array.from(
+            document.querySelectorAll(
+              "#admissionGrid .admission-card"
+            )
+          );
+
+        const search =
+          document.getElementById(
+            "admissionSearch"
+          );
+
+        const searchButton =
+          document.getElementById(
+            "admissionSearchButton"
+          );
+
+        const institution =
+          document.getElementById(
+            "institutionFilter"
+          );
+
+        const ownership =
+          document.getElementById(
+            "ownershipFilter"
+          );
+
+        const admissionType =
+          document.getElementById(
+            "admissionTypeFilter"
+          );
+
+        const status =
+          document.getElementById(
+            "statusFilter"
+          );
+
+        const count =
+          document.getElementById(
+            "admissionResultCount"
+          );
+
+        const noResults =
+          document.getElementById(
+            "noAdmissions"
+          );
+
+
+        function filterAdmissions() {
+
+          const searchText =
+            search.value
+              .trim()
+              .toLowerCase();
+
+
+          const institutionValue =
+            institution.value
+              .toLowerCase();
+
+
+          const ownershipValue =
+            ownership.value
+              .toLowerCase();
+
+
+          const admissionValue =
+            admissionType.value
+              .toLowerCase();
+
+
+          const statusValue =
+            status.value
+              .toLowerCase();
+
+
+          let visibleCount = 0;
+
+
+          cards.forEach(
+            function (card) {
+
+              const name =
+                (
+                  card.dataset.name || ""
+                ).toLowerCase();
+
+
+              const searchData =
+                (
+                  card.dataset.search || ""
+                ).toLowerCase();
+
+
+              const type =
+                (
+                  card.dataset.type || ""
+                ).toLowerCase();
+
+
+              const owner =
+                (
+                  card.dataset.ownership || ""
+                ).toLowerCase();
+
+
+              const admission =
+                (
+                  card.dataset.admission || ""
+                ).toLowerCase();
+
+
+              const cardStatus =
+                (
+                  card.dataset.status || ""
+                ).toLowerCase();
+
+
+              const matchesSearch =
+                !searchText ||
+                name.includes(searchText) ||
+                searchData.includes(searchText);
+
+
+              const matchesInstitution =
+                !institutionValue ||
+                type === institutionValue;
+
+
+              const matchesOwnership =
+                !ownershipValue ||
+                owner === ownershipValue;
+
+
+              const matchesAdmission =
+                !admissionValue ||
+                admission === admissionValue;
+
+
+              const matchesStatus =
+                !statusValue ||
+                cardStatus === statusValue;
+
+
+              const matches =
+                matchesSearch &&
+                matchesInstitution &&
+                matchesOwnership &&
+                matchesAdmission &&
+                matchesStatus;
+
+
+              if (matches) {
+
+                card.style.display = "";
+
+                visibleCount++;
+
+              } else {
+
+                card.style.display = "none";
+
+              }
+
+            }
+          );
+
+
+          count.textContent =
+            visibleCount +
+            (
+              visibleCount === 1
+                ? " opportunity"
+                : " opportunities"
+            );
+
+
+          noResults.style.display =
+            visibleCount === 0
+              ? "block"
+              : "none";
+
+        }
+
+
+        search.addEventListener(
+          "input",
+ ross Nigeria.
     When you find an opportunity, ELEVIQ takes you directly to
     the institution's official website or admission portal.
   </p></section><!-- =========================================
