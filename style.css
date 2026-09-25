@@ -535,3 +535,309 @@ a{text-decoration:none;color:inherit}
     }
 
   }
+/* =========================================
+   ELEVIQ SCHOOL DIRECTORY
+========================================= */
+
+.admissions-page-hero {
+    padding: 90px 20px 70px;
+    background: linear-gradient(
+        135deg,
+        #f5f8ff 0%,
+        #ffffff 55%,
+        #eef4ff 100%
+    );
+}
+
+
+.admissions-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+
+.admissions-page-hero h1 {
+    margin: 18px 0 15px;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.05;
+}
+
+
+.admissions-page-hero h1 span {
+    color: #155eef;
+}
+
+
+.admissions-page-hero p {
+    max-width: 720px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #5b6472;
+}
+
+
+.directory-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 760px;
+    margin-top: 30px;
+    background: #ffffff;
+    border: 1px solid #dfe5ef;
+    border-radius: 14px;
+    padding: 6px 18px;
+    box-shadow: 0 10px 30px rgba(20, 40, 80, 0.08);
+}
+
+
+.directory-search span {
+    font-size: 25px;
+}
+
+
+.directory-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 15px 5px;
+    font-size: 16px;
+}
+
+
+.directory-filters {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin: 30px 0 20px;
+}
+
+
+.directory-filters select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dfe5ef;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #263142;
+    font-size: 15px;
+    outline: none;
+}
+
+
+.directory-result-bar {
+    margin: 20px 0;
+    color: #687386;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.school-directory-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+.school-directory-card {
+    background: #ffffff;
+    border: 1px solid #e4e8ef;
+    border-radius: 16px;
+    padding: 24px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.school-directory-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 15px 35px rgba(20, 40, 80, 0.10);
+}
+
+
+.school-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+
+.school-type,
+.school-ownership {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 30px;
+    background: #f1f5ff;
+    color: #155eef;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.school-ownership {
+    background: #f5f5f5;
+    color: #596273;
+}
+
+
+.school-directory-card h3 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.35;
+    color: #182230;
+}
+
+
+.school-short-name {
+    margin-top: 6px;
+    color: #155eef;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.school-location {
+    margin: 15px 0 22px;
+    color: #687386;
+    font-size: 14px;
+}
+
+
+.school-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+
+.school-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+
+.website-button {
+    background: #155eef;
+    color: #ffffff;
+}
+
+
+.website-button:hover {
+    opacity: 0.9;
+}
+
+
+.admission-button {
+    background: #eef4ff;
+    color: #155eef;
+    border: 1px solid #d6e2ff;
+}
+
+
+.admission-button:hover {
+    background: #e1ebff;
+}
+
+
+.school-verification {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #edf0f5;
+    font-size: 11px;
+}
+
+
+.verified-badge {
+    color: #087443;
+    font-weight: 600;
+}
+
+
+.portal-unavailable {
+    color: #8a94a6;
+}
+
+
+.no-directory-results {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8faff;
+    border-radius: 15px;
+}
+
+
+.no-directory-results h3 {
+    margin-bottom: 8px;
+}
+
+
+.no-directory-results p {
+    color: #687386;
+}
+
+
+.directory-note {
+    margin-top: 35px;
+    padding: 20px;
+    background: #fff9e8;
+    border: 1px solid #f3df9a;
+    border-radius: 12px;
+    color: #665522;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .school-directory-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .directory-filters {
+        grid-template-columns: 1fr;
+    }
+
+
+    .school-directory-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admissions-page-hero {
+        padding: 65px 20px 50px;
+    }
+
+
+    .admissions-page-hero h1 {
+        font-size: 42px;
+    }
+
+
+    .directory-search {
+        border-radius: 12px;
+    }
+
+      }
