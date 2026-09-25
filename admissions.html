@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Find universities, polytechnics and colleges across Nigeria through the ELEVIQ institution directory."
+    >
+
+    <title>ELEVIQ | Nigerian School Directory</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+    <a class="logo" href="index.html" aria-label="ELEVIQ home">
+        <img src="eleviq-logo.png" alt="ELEVIQ">
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="admissions.html" class="active">
+            Admissions
+        </a>
+
+        <a href="index.html#opportunities">
+            Opportunities
+        </a>
+
+        <a href="index.html#services">
+            Services
+        </a>
+
+        <a href="index.html#resources">
+            Resources
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+        <a href="index.html#contact">
+            Contact
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <a
+            class="login-link"
+            href="index.html#contact"
+        >
+            Login / Register
+        </a>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- =========================
+     ADMISSIONS HERO
+========================= -->
+
+<section class="admissions-page-hero">
+
+    <div class="admissions-container">
+
+        <span class="section-tag">
+            ELEVIQ SCHOOL DIRECTORY
+        </span>
+
+        <h1>
+            Find a School in
+            <span>Nigeria</span>
+        </h1>
+
+        <p>
+            Search universities, polytechnics and colleges
+            across Nigeria and visit their official websites
+            and verified admission portals.
+        </p>
+
+        <div class="directory-search">
+
+            <span>⌕</span>
+
+            <input
+                type="search"
+                id="schoolSearch"
+                placeholder="Search institution, state or abbreviation..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DIRECTORY
+========================= -->
+
+<section class="section">
+
+    <div class="admissions-container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-kicker">
+                    INSTITUTION DIRECTORY
+                </div>
+
+                <h2>
+                    Explore Nigerian Institutions
+                </h2>
+
+                <p>
+                    Find the official website and, where
+                    separately verified, the institution's
+                    official admission portal.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="directory-filters">
+
+            <select id="institutionType">
+
+                <option value="all">
+                    All Institution Types
+                </option>
+
+                <option value="university">
+                    Universities
+                </option>
+
+                <option value="polytechnic">
+                    Polytechnics
+                </option>
+
+                <option value="college">
+                    Colleges of Education
+                </option>
+
+            </select>
+
+
+            <select id="ownershipFilter">
+
+                <option value="all">
+                    All Ownership
+                </option>
+
+                <option value="federal">
+                    Federal
+                </option>
+
+                <option value="state">
+                    State
+                </option>
+
+                <option value="private">
+                    Private
+                </option>
+
+            </select>
+
+
+            <select id="stateFilter">
+
+                <option value="all">
+                    All States
+                </option>
+
+                <option value="abuja">
+                    FCT
+                </option>
+
+                <option value="abia">
+                    Abia
+                </option>
+
+                <option value="adamawa">
+                    Adamawa
+                </option>
+
+                <option value="akwa-ibom">
+                    Akwa Ibom
+                </option>
+
+                <option value="anambra">
+                    Anambra
+                </option>
+
+                <option value="bauchi">
+                    Bauchi
+                </option>
+
+                <option value="bayelsa">
+                    Bayelsa
+                </option>
+
+                <option value="benue">
+                    Benue
+                </option>
+
+                <option value="borno">
+                    Borno
+                </option>
+
+                <option value="cross-river">
+                    Cross River
+                </option>
+
+                <option value="delta">
+                    Delta
+                </option>
+
+                <option value="ebonyi">
+                    Ebonyi
+                </option>
+
+                <option value="edo">
+                    Edo
+                </option>
+
+                <option value="ekiti">
+                    Ekiti
+                </option>
+
+                <option value="enugu">
+                    Enugu
+                </option>
+
+                <option value="gombe">
+                    Gombe
+                </option>
+
+                <option value="imo">
+                    Imo
+                </option>
+
+                <option value="jigawa">
+                    Jigawa
+                </option>
+
+                <option value="kaduna">
+                    Kaduna
+                </option>
+
+                <option value="kano">
+                    Kano
+                </option>
+
+                <option value="katsina">
+                    Katsina
+                </option>
+
+                <option value="kebbi">
+                    Kebbi
+                </option>
+
+                <option value="kogi">
+                    Kogi
+                </option>
+
+                <option value="kwara">
+                    Kwara
+                </option>
+
+                <option value="lagos">
+                    Lagos
+                </option>
+
+                <option value="nasarawa">
+                    Nasarawa
+                </option>
+
+                <option value="niger">
+                    Niger
+                </option>
+
+                <option value="ogun">
+                    Ogun
+                </option>
+
+                <option value="ondo">
+                    Ondo
+                </option>
+
+                <option value="osun">
+                    Osun
+                </option>
+
+                <option value="oyo">
+                    Oyo
+                </option>
+
+                <option value="plateau">
+                    Plateau
+                </option>
+
+                <option value="rivers">
+                    Rivers
+                </option>
+
+                <option value="sokoto">
+                    Sokoto
+                </option>
+
+                <option value="taraba">
+                    Taraba
+                </option>
+
+                <option value="yobe">
+                    Yobe
+                </option>
+
+                <option value="zamfara">
+                    Zamfara
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- RESULTS COUNT -->
+
+        <div class="directory-result-bar">
+
+            <span id="resultCount">
+                Loading institutions...
+            </span>
+
+        </div>
+
+
+        <!-- SCHOOL CARDS -->
+
+        <div
+            class="school-directory-grid"
+            id="schoolDirectory"
+        ></div>
+
+
+        <!-- NO RESULTS -->
+
+        <div
+            class="no-directory-results"
+            id="noResults"
+            style="display:none;"
+        >
+
+            <h3>
+                No institution found
+            </h3>
+
+            <p>
+                Try another school name, state or filter.
+            </p>
+
+        </div>
+
+
+        <!-- DISCLAIMER -->
+
+        <div class="directory-note">
+
+            <strong>Important:</strong>
+
+            ELEVIQ is an independent educational
+            information platform. Always confirm admission
+            requirements, deadlines, fees and application
+            instructions on the institution's official
+            website or official admission portal.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GUIDANCE
+========================= -->
+
+<section class="contact-section">
+
+    <div class="contact-box">
+
+        <div>
+
+            <div class="section-kicker light-text">
+                NEED HELP?
+            </div>
+
+            <h2>
+                Not sure which school to choose?
+            </h2>
+
+            <p>
+                Talk to ELEVIQ for admission guidance
+                and help understanding your options.
+            </p>
+
+        </div>
+
+        <div class="contact-actions">
+
+            <a
+                class="btn white"
+                href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20need%20admission%20guidance."
+                target="_blank"
+                rel="noopener"
+            >
+                Get Admission Guidance
+            </a>
+
+            <a
+                class="email-link"
+                href="mailto:eleviq1@gmail.com"
+            >
+                eleviq1@gmail.com
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <a
+                class="footer-logo"
+                href="index.html"
+            >
+                <img
+                    src="eleviq-logo.png"
+                    alt="ELEVIQ"
+                >
+            </a>
+
+            <p>
+                Your smarter pathway to educational opportunities.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>Explore</h4>
+
+            <a href="index.html#opportunities">
+                Opportunities
+            </a>
+
+            <a href="admissions.html">
+                Admissions
+            </a>
+
+            <a href="index.html#services">
+                Services
+            </a>
+
+            <a href="index.html#resources">
+                Resources
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Company</h4>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+            <a href="mailto:eleviq1@gmail.com">
+                Email us
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Connect</h4>
+
+            <a
+                href="https://wa.me/2349011582752"
+                target="_blank"
+                rel="noopener"
+            >
+                WhatsApp
+            </a>
+
+            <a href="mailto:eleviq1@gmail.com">
+                eleviq1@gmail.com
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 ELEVIQ. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<script src="admissions.js"></script>
+
+</body>
+          </html>
