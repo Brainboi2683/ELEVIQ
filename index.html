@@ -178,7 +178,269 @@
       </div>
     </div>
   </section>
+<!-- =========================
+     ADMISSIONS SECTION
+========================= -->
+<section id="admissions" class="admissions-section">
 
+    <div class="admissions-container">
+
+        <!-- Header -->
+        <div class="admissions-header">
+            <span class="section-tag">ADMISSIONS</span>
+
+            <h2>Find Your Next <span>Admission Opportunity</span></h2>
+
+            <p>
+                Discover admission opportunities, programmes and application
+                information from institutions across Nigeria.
+            </p>
+        </div>
+
+
+        <!-- Search -->
+        <div class="admission-search-box">
+            <input
+                type="text"
+                id="admissionSearch"
+                placeholder="Search school, programme or admission type..."
+            >
+
+            <button type="button" id="searchAdmissionBtn">
+                Search
+            </button>
+        </div>
+
+
+        <!-- Filters -->
+        <div class="admission-filters">
+
+            <select id="institutionFilter">
+                <option value="all">All Institutions</option>
+                <option value="university">Universities</option>
+                <option value="polytechnic">Polytechnics</option>
+                <option value="college">Colleges</option>
+            </select>
+
+            <select id="admissionTypeFilter">
+                <option value="all">All Admission Types</option>
+                <option value="utme">UTME</option>
+                <option value="direct-entry">Direct Entry</option>
+                <option value="jupeb">JUPEB</option>
+                <option value="pre-degree">Pre-degree</option>
+                <option value="post-utme">Post-UTME</option>
+            </select>
+
+            <select id="admissionStatusFilter">
+                <option value="all">All Status</option>
+                <option value="open">Open</option>
+                <option value="closing-soon">Closing Soon</option>
+            </select>
+
+        </div>
+
+
+        <!-- Admission Opportunities -->
+        <div class="admissions-list" id="admissionsList">
+
+            <!-- Admission Card 1 -->
+            <article
+                class="admission-card"
+                data-institution="university"
+                data-type="jupeb"
+                data-status="open"
+                data-search="LAUTECH JUPEB Joint Universities Preliminary Examinations Board"
+            >
+
+                <div class="admission-card-top">
+                    <span class="admission-status open">Open</span>
+                    <span class="institution-type">University</span>
+                </div>
+
+                <h3>LAUTECH</h3>
+
+                <p class="admission-title">
+                    JUPEB Programme
+                </p>
+
+                <p class="admission-location">
+                    📍 Ogbomoso, Oyo State
+                </p>
+
+                <div class="admission-info">
+                    <div>
+                        <small>Admission Type</small>
+                        <strong>JUPEB</strong>
+                    </div>
+
+                    <div>
+                        <small>Status</small>
+                        <strong>Open</strong>
+                    </div>
+                </div>
+
+                <button
+                    class="view-admission-btn"
+                    onclick="showAdmissionDetails('lautech')"
+                >
+                    View Details
+                </button>
+
+            </article>
+
+
+            <!-- Admission Card 2 -->
+            <article
+                class="admission-card"
+                data-institution="university"
+                data-type="post-utme"
+                data-status="open"
+                data-search="OAUSTECH Ondo State University of Science and Technology Post UTME"
+            >
+
+                <div class="admission-card-top">
+                    <span class="admission-status open">Open</span>
+                    <span class="institution-type">University</span>
+                </div>
+
+                <h3>OAUSTECH</h3>
+
+                <p class="admission-title">
+                    Post-UTME Admission
+                </p>
+
+                <p class="admission-location">
+                    📍 Okitipupa, Ondo State
+                </p>
+
+                <div class="admission-info">
+                    <div>
+                        <small>Admission Type</small>
+                        <strong>Post-UTME</strong>
+                    </div>
+
+                    <div>
+                        <small>Status</small>
+                        <strong>Open</strong>
+                    </div>
+                </div>
+
+                <button
+                    class="view-admission-btn"
+                    onclick="showAdmissionDetails('oaustech')"
+                >
+                    View Details
+                </button>
+
+            </article>
+
+
+            <!-- Admission Card 3 -->
+            <article
+                class="admission-card"
+                data-institution="university"
+                data-type="pre-degree"
+                data-status="open"
+                data-search="LAUTECH Pre-degree programme admission"
+            >
+
+                <div class="admission-card-top">
+                    <span class="admission-status open">Open</span>
+                    <span class="institution-type">University</span>
+                </div>
+
+                <h3>LAUTECH</h3>
+
+                <p class="admission-title">
+                    Pre-degree Programme
+                </p>
+
+                <p class="admission-location">
+                    📍 Ogbomoso, Oyo State
+                </p>
+
+                <div class="admission-info">
+                    <div>
+                        <small>Admission Type</small>
+                        <strong>Pre-degree</strong>
+                    </div>
+
+                    <div>
+                        <small>Status</small>
+                        <strong>Open</strong>
+                    </div>
+                </div>
+
+                <button
+                    class="view-admission-btn"
+                    onclick="showAdmissionDetails('lautech-predegree')"
+                >
+                    View Details
+                </button>
+
+            </article>
+
+        </div>
+
+
+        <!-- No Results -->
+        <div id="noAdmissionResults" class="no-admission-results">
+            <h3>No admission opportunities found</h3>
+            <p>
+                Try changing your search or filters.
+            </p>
+        </div>
+
+
+        <!-- Guidance CTA -->
+        <div class="admission-guidance">
+
+            <div>
+                <span class="section-tag">NEED HELP?</span>
+
+                <h2>Not sure which admission option is right for you?</h2>
+
+                <p>
+                    Get guidance from ELEVIQ and understand your available
+                    admission options before you apply.
+                </p>
+            </div>
+
+            <a
+                href="https://wa.me/2340000000000"
+                class="guidance-btn"
+                target="_blank"
+            >
+                Get Admission Guidance
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADMISSION DETAILS MODAL
+========================= -->
+
+<div id="admissionModal" class="admission-modal">
+
+    <div class="admission-modal-content">
+
+        <button
+            class="close-admission-modal"
+            onclick="closeAdmissionDetails()"
+        >
+            &times;
+        </button>
+
+        <div id="admissionDetails"></div>
+
+    </div>
+
+</div>
   <section id="contact" class="contact-section">
     <div class="contact-box">
       <div>
