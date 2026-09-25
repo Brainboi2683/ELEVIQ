@@ -1,0 +1,706 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    if (menuButton && navLinks) {
+
+        menuButton.addEventListener("click", function () {
+
+            const isOpen =
+                navLinks.classList.toggle("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+        });
+
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove(
+                            "active"
+                        );
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            });
+
+    }
+
+
+    /* =========================================
+       INSTITUTION DATABASE
+    ========================================= */
+
+    const institutions = [
+
+        /* =========================
+           FEDERAL UNIVERSITIES
+        ========================= */
+
+        {
+            name: "Abubakar Tafawa Balewa University",
+            shortName: "ATBU",
+            type: "university",
+            ownership: "federal",
+            state: "bauchi",
+            stateName: "Bauchi",
+            location: "Bauchi",
+            website: "https://www.atbu.edu.ng/",
+            admissionPortal: "https://screening.atbu.edu.ng/",
+            portalLabel: "Admission / Screening Portal"
+        },
+
+        {
+            name: "Ahmadu Bello University",
+            shortName: "ABU",
+            type: "university",
+            ownership: "federal",
+            state: "kaduna",
+            stateName: "Kaduna",
+            location: "Zaria",
+            website: "https://www.abu.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Bayero University Kano",
+            shortName: "BUK",
+            type: "university",
+            ownership: "federal",
+            state: "kano",
+            stateName: "Kano",
+            location: "Kano",
+            website: "https://www.buk.edu.ng/",
+            admissionPortal: "https://buk.edu.ng/students_portals_new",
+            portalLabel: "Student / Application Portal"
+        },
+
+        {
+            name: "Federal University Gashua",
+            shortName: "FUGASHUA",
+            type: "university",
+            ownership: "federal",
+            state: "yobe",
+            stateName: "Yobe",
+            location: "Gashua",
+            website: "https://www.fugashua.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Federal University of Petroleum Resources, Effurun",
+            shortName: "FUPRE",
+            type: "university",
+            ownership: "federal",
+            state: "delta",
+            stateName: "Delta",
+            location: "Effurun",
+            website: "https://www.fupre.edu.ng/",
+            admissionPortal: "https://soap.fupre.edu.ng/utme/",
+            portalLabel: "Post-UTME Portal"
+        },
+
+        {
+            name: "Federal University of Technology, Akure",
+            shortName: "FUTA",
+            type: "university",
+            ownership: "federal",
+            state: "ondo",
+            stateName: "Ondo",
+            location: "Akure",
+            website: "https://www.futa.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Federal University of Technology, Minna",
+            shortName: "FUTMINNA",
+            type: "university",
+            ownership: "federal",
+            state: "niger",
+            stateName: "Niger",
+            location: "Minna",
+            website: "https://www.futminna.edu.ng/",
+            admissionPortal: "https://eportal.futminna.edu.ng/ePortal_V2/utme/",
+            portalLabel: "Post-UTME Portal"
+        },
+
+        {
+            name: "Federal University of Technology, Owerri",
+            shortName: "FUTO",
+            type: "university",
+            ownership: "federal",
+            state: "imo",
+            stateName: "Imo",
+            location: "Owerri",
+            website: "https://www.futo.edu.ng/",
+            admissionPortal: "https://portal.futo.edu.ng/",
+            portalLabel: "Undergraduate Portal"
+        },
+
+        {
+            name: "Federal University, Dutse",
+            shortName: "FUD",
+            type: "university",
+            ownership: "federal",
+            state: "jigawa",
+            stateName: "Jigawa",
+            location: "Dutse",
+            website: "https://www.fud.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Federal University, Dutsin-Ma",
+            shortName: "FUDMA",
+            type: "university",
+            ownership: "federal",
+            state: "katsina",
+            stateName: "Katsina",
+            location: "Dutsin-Ma",
+            website: "https://www.fudutsinma.edu.ng/",
+            admissionPortal: "https://portal.fudutsinma.edu.ng/",
+            portalLabel: "Admission Portal"
+        },
+
+
+        /* =========================
+           IMPORTANT ADDITIONAL
+           UNIVERSITIES
+        ========================= */
+
+        {
+            name: "University of Benin",
+            shortName: "UNIBEN",
+            type: "university",
+            ownership: "federal",
+            state: "edo",
+            stateName: "Edo",
+            location: "Benin City",
+            website: "https://www.uniben.edu/",
+            admissionPortal: "https://waeup.uniben.edu/",
+            portalLabel: "Admission Portal"
+        },
+
+        {
+            name: "University of Lagos",
+            shortName: "UNILAG",
+            type: "university",
+            ownership: "federal",
+            state: "lagos",
+            stateName: "Lagos",
+            location: "Akoka, Lagos",
+            website: "https://unilag.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "University of Ibadan",
+            shortName: "UI",
+            type: "university",
+            ownership: "federal",
+            state: "oyo",
+            stateName: "Oyo",
+            location: "Ibadan",
+            website: "https://ui.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "University of Nigeria, Nsukka",
+            shortName: "UNN",
+            type: "university",
+            ownership: "federal",
+            state: "enugu",
+            stateName: "Enugu",
+            location: "Nsukka",
+            website: "https://www.unn.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "University of Ilorin",
+            shortName: "UNILORIN",
+            type: "university",
+            ownership: "federal",
+            state: "kwara",
+            stateName: "Kwara",
+            location: "Ilorin",
+            website: "https://www.unilorin.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "University of Abuja",
+            shortName: "UNIABUJA",
+            type: "university",
+            ownership: "federal",
+            state: "abuja",
+            stateName: "FCT",
+            location: "Abuja",
+            website: "https://www.uniabuja.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "University of Jos",
+            shortName: "UNIJOS",
+            type: "university",
+            ownership: "federal",
+            state: "plateau",
+            stateName: "Plateau",
+            location: "Jos",
+            website: "https://www.unijos.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "University of Port Harcourt",
+            shortName: "UNIPORT",
+            type: "university",
+            ownership: "federal",
+            state: "rivers",
+            stateName: "Rivers",
+            location: "Port Harcourt",
+            website: "https://www.uniport.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Nnamdi Azikiwe University",
+            shortName: "UNIZIK",
+            type: "university",
+            ownership: "federal",
+            state: "anambra",
+            stateName: "Anambra",
+            location: "Awka",
+            website: "https://www.unizik.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+
+        /* =========================
+           STATE UNIVERSITIES
+        ========================= */
+
+        {
+            name: "Lagos State University",
+            shortName: "LASU",
+            type: "university",
+            ownership: "state",
+            state: "lagos",
+            stateName: "Lagos",
+            location: "Ojo",
+            website: "https://lasu.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Ladoke Akintola University of Technology",
+            shortName: "LAUTECH",
+            type: "university",
+            ownership: "state",
+            state: "oyo",
+            stateName: "Oyo",
+            location: "Ogbomoso",
+            website: "https://lautech.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Ambrose Alli University",
+            shortName: "AAU",
+            type: "university",
+            ownership: "state",
+            state: "edo",
+            stateName: "Edo",
+            location: "Ekpoma",
+            website: "https://aauekpoma.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Adekunle Ajasin University",
+            shortName: "AAUA",
+            type: "university",
+            ownership: "state",
+            state: "ondo",
+            stateName: "Ondo",
+            location: "Akungba-Akoko",
+            website: "https://www.aaua.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Kogi State University",
+            shortName: "KSU",
+            type: "university",
+            ownership: "state",
+            state: "kogi",
+            stateName: "Kogi",
+            location: "Anyigba",
+            website: "https://ksu.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+
+        /* =========================
+           PRIVATE UNIVERSITIES
+        ========================= */
+
+        {
+            name: "Babcock University",
+            shortName: "BU",
+            type: "university",
+            ownership: "private",
+            state: "ogun",
+            stateName: "Ogun",
+            location: "Ilishan-Remo",
+            website: "https://www.babcock.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Igbinedion University",
+            shortName: "IUO",
+            type: "university",
+            ownership: "private",
+            state: "edo",
+            stateName: "Edo",
+            location: "Okada",
+            website: "https://www.iuokada.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Madonna University",
+            shortName: "MU",
+            type: "university",
+            ownership: "private",
+            state: "anambra",
+            stateName: "Anambra",
+            location: "Okija",
+            website: "https://www.madonnauniversity.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Bowen University",
+            shortName: "BU",
+            type: "university",
+            ownership: "private",
+            state: "osun",
+            stateName: "Osun",
+            location: "Iwo",
+            website: "https://www.bowen.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Benson Idahosa University",
+            shortName: "BIU",
+            type: "university",
+            ownership: "private",
+            state: "edo",
+            stateName: "Edo",
+            location: "Benin City",
+            website: "https://www.biu.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Covenant University",
+            shortName: "CU",
+            type: "university",
+            ownership: "private",
+            state: "ogun",
+            stateName: "Ogun",
+            location: "Ota",
+            website: "https://www.covenantuniversity.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Pan-Atlantic University",
+            shortName: "PAU",
+            type: "university",
+            ownership: "private",
+            state: "lagos",
+            stateName: "Lagos",
+            location: "Lagos",
+            website: "https://www.pau.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "American University of Nigeria",
+            shortName: "AUN",
+            type: "university",
+            ownership: "private",
+            state: "adamawa",
+            stateName: "Adamawa",
+            location: "Yola",
+            website: "https://www.aun.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Ajayi Crowther University",
+            shortName: "ACU",
+            type: "university",
+            ownership: "private",
+            state: "oyo",
+            stateName: "Oyo",
+            location: "Ibadan",
+            website: "https://www.acu.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Al-Hikmah University",
+            shortName: "AUN",
+            type: "university",
+            ownership: "private",
+            state: "kwara",
+            stateName: "Kwara",
+            location: "Ilorin",
+            website: "https://www.alhikmah.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Al-Qalam University",
+            shortName: "AUK",
+            type: "university",
+            ownership: "private",
+            state: "katsina",
+            stateName: "Katsina",
+            location: "Katsina",
+            website: "https://www.auk.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+
+        /* =========================
+           POLYTECHNICS
+        ========================= */
+
+        {
+            name: "Federal Polytechnic, Auchi",
+            shortName: "Auchi Poly",
+            type: "polytechnic",
+            ownership: "federal",
+            state: "edo",
+            stateName: "Edo",
+            location: "Auchi",
+            website: "https://auchipoly.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Federal Polytechnic, Bida",
+            shortName: "Bida Poly",
+            type: "polytechnic",
+            ownership: "federal",
+            state: "niger",
+            stateName: "Niger",
+            location: "Bida",
+            website: "https://fedpolybida.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Federal Polytechnic, Ede",
+            shortName: "Ede Poly",
+            type: "polytechnic",
+            ownership: "federal",
+            state: "osun",
+            stateName: "Osun",
+            location: "Ede",
+            website: "https://fedpolyede.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Federal Polytechnic, Ilaro",
+            shortName: "Ilaro Poly",
+            type: "polytechnic",
+            ownership: "federal",
+            state: "ogun",
+            stateName: "Ogun",
+            location: "Ilaro",
+            website: "https://federalpolyilaro.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Federal Polytechnic, Nekede",
+            shortName: "Nekede Poly",
+            type: "polytechnic",
+            ownership: "federal",
+            state: "imo",
+            stateName: "Imo",
+            location: "Owerri",
+            website: "https://federalpolynekede.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+
+        /* =========================
+           COLLEGES OF EDUCATION
+        ========================= */
+
+        {
+            name: "Federal College of Education, Zuba",
+            shortName: "FCE Zuba",
+            type: "college",
+            ownership: "federal",
+            state: "abuja",
+            stateName: "FCT",
+            location: "Zuba",
+            website: "https://fctcoezuba.com.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Federal College of Education, Oyo",
+            shortName: "FCE Oyo",
+            type: "college",
+            ownership: "federal",
+            state: "oyo",
+            stateName: "Oyo",
+            location: "Oyo",
+            website: "https://www.fceoyo.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Niger State College of Education, Minna",
+            shortName: "COE Minna",
+            type: "college",
+            ownership: "state",
+            state: "niger",
+            stateName: "Niger",
+            location: "Minna",
+            website: "https://www.coeminna.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Kogi State College of Education, Ankpa",
+            shortName: "KSOE Ankpa",
+            type: "college",
+            ownership: "state",
+            state: "kogi",
+            stateName: "Kogi",
+            location: "Ankpa",
+            website: "https://www.kscoeankpa.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Nwafor Orizu College of Education, Nsugbe",
+            shortName: "NOCEN",
+            type: "college",
+            ownership: "state",
+            state: "anambra",
+            stateName: "Anambra",
+            location: "Nsugbe",
+            website: "https://nocen.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "College of Education, Ikere-Ekiti",
+            shortName: "COE Ikere",
+            type: "college",
+            ownership: "state",
+            state: "ekiti",
+            stateName: "Ekiti",
+            location: "Ikere-Ekiti",
+            website: "https://www.coeikere.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "College of Education, Warri",
+            shortName: "COE Warri",
+            type: "college",
+            ownership: "state",
+            state: "delta",
+            stateName: "Delta",
+            location: "Warri",
+            website: "https://www.coewarri.edu.ng/",
+            admissionPortal: "",
+            portalLabel: ""
+        },
+
+        {
+            name: "Edo State College of Education, Igueben",
+            shortName: "Edo COE",
+            type: "college",
+            ownership: "state",
+            state:
