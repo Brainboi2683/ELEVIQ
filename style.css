@@ -57,756 +57,539 @@ a{text-decoration:none;color:inherit}
   }
 }
 /* =========================================
-   ELEVIQ — ADMISSIONS SECTION
+   ELEVIQ — ADMISSIONS DIRECTORY
+   DATABASE-DRIVEN ADMISSIONS PAGE
 ========================================= */
 
-.admissions-section {
-    padding: 100px 20px;
-    background: #f7f9fc;
+
+/* =========================================
+   ADMISSIONS HERO
+========================================= */
+
+.admissions-hero {
+    padding: 90px 20px 55px;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #dceaff 0,
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f4f8ff,
+            #ffffff 65%
+        );
+    border-bottom: 1px solid #eef2f7;
 }
 
-.admissions-container {
-    max-width: 1200px;
+.admissions-hero .hero-content {
+    max-width: 900px;
     margin: 0 auto;
-}
-
-
-/* ---------- HEADER ---------- */
-
-.admissions-header {
-    max-width: 750px;
-    margin: 0 auto 45px;
     text-align: center;
 }
 
-.section-tag {
-    display: inline-block;
-    margin-bottom: 12px;
-    color: #1557d6;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+.admissions-hero h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -2.5px;
+    margin: 15px auto 18px;
+    font-weight: 900;
+    color: var(--ink);
 }
 
-.admissions-header h2 {
-    margin: 0 0 15px;
-    color: #111827;
-    font-size: 42px;
-    line-height: 1.2;
-    font-weight: 800;
+.admissions-hero h1 span {
+    color: var(--blue);
 }
 
-.admissions-header h2 span {
-    color: #1557d6;
-}
-
-.admissions-header p {
-    margin: 0;
-    color: #667085;
+.admissions-hero p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--muted);
     font-size: 17px;
     line-height: 1.7;
 }
 
 
-/* ---------- SEARCH ---------- */
+/* =========================================
+   ADMISSIONS SEARCH
+========================================= */
 
-.admission-search-box {
+.admission-search {
     max-width: 850px;
-    margin: 0 auto 25px;
-    display: flex;
+    margin: 30px auto 22px;
+
     background: #ffffff;
-    padding: 8px;
+    border: 1px solid #d0d5dd;
     border-radius: 14px;
-    border: 1px solid #e4e7ec;
-    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+
+    padding: 7px;
+
+    display: flex;
+    align-items: center;
+
+    box-shadow:
+        0 12px 35px rgba(16, 24, 40, .08);
 }
 
-.admission-search-box input {
+.admission-search input {
     flex: 1;
-    border: none;
-    outline: none;
-    padding: 16px 18px;
-    font-size: 15px;
-    color: #101828;
+    min-width: 0;
+
+    border: 0;
+    outline: 0;
+
+    padding: 14px 12px;
+
     background: transparent;
+    color: var(--ink);
+
+    font-size: 15px;
 }
 
-.admission-search-box input::placeholder {
+.admission-search input::placeholder {
     color: #98a2b3;
 }
 
-.admission-search-box button {
-    border: none;
-    background: #1557d6;
+.admission-search button {
+    border: 0;
+
+    background: var(--blue);
     color: #ffffff;
-    padding: 0 28px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 700;
+
+    padding: 13px 22px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 800;
+
     cursor: pointer;
-    transition: 0.3s ease;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
 }
 
-.admission-search-box button:hover {
-    background: #0e43aa;
+.admission-search button:hover {
+    background: var(--blue-dark);
+    transform: translateY(-1px);
 }
 
 
-/* ---------- FILTERS ---------- */
+/* =========================================
+   ADMISSION FILTERS
+========================================= */
 
 .admission-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    max-width: 1180px;
+    margin: 25px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
     gap: 12px;
-    margin-bottom: 45px;
 }
 
 .admission-filters select {
-    min-width: 190px;
-    padding: 13px 16px;
+    width: 100%;
+    min-width: 0;
+
+    padding: 13px 14px;
+
     border: 1px solid #d0d5dd;
     border-radius: 10px;
+
     background: #ffffff;
     color: #344054;
-    font-size: 14px;
+
+    font-size: 13px;
+    font-weight: 600;
+
     outline: none;
     cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.admission-filters select:hover {
+    border-color: #98a2b3;
 }
 
 .admission-filters select:focus {
-    border-color: #1557d6;
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(23, 105, 224, .10);
 }
 
 
-/* ---------- ADMISSION GRID ---------- */
+/* =========================================
+   ADMISSIONS DIRECTORY
+========================================= */
 
-.admissions-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+.admissions-directory {
+    padding: 70px 20px 90px;
+    background: #f8fafc;
+}
+
+.admissions-directory-container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
 }
 
 
-/* ---------- CARD ---------- */
+/* =========================================
+   RESULT HEADER
+========================================= */
 
-.admission-card {
-    background: #ffffff;
-    border: 1px solid #eaecf0;
-    border-radius: 18px;
-    padding: 25px;
-    transition: 0.3s ease;
-    box-shadow: 0 5px 20px rgba(16, 24, 40, 0.04);
-}
-
-.admission-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(16, 24, 40, 0.10);
-}
-
-.admission-card-top {
+.admission-result-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
     margin-bottom: 25px;
 }
 
-.admission-status,
-.institution-type {
+.admission-result-header h2 {
+    margin: 0;
+
+    font-size: 25px;
+    line-height: 1.2;
+
+    letter-spacing: -.5px;
+}
+
+.admission-result-count {
+    color: var(--muted);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   SCHOOL GRID
+========================================= */
+
+.admission-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   SCHOOL CARD
+========================================= */
+
+.admission-card {
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+    border-radius: 17px;
+
+    padding: 24px;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.admission-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #c7dafa;
+
+    box-shadow:
+        0 16px 35px rgba(16, 24, 40, .09);
+}
+
+
+/* =========================================
+   ADMISSION STATUS
+========================================= */
+
+.admission-status {
     display: inline-flex;
     align-items: center;
+
+    align-self: flex-start;
+
     padding: 6px 10px;
+
+    margin-bottom: 15px;
+
     border-radius: 30px;
-    font-size: 11px;
-    font-weight: 700;
+
+    font-size: 10px;
+    font-weight: 850;
+
+    letter-spacing: .3px;
+
+    text-transform: uppercase;
 }
+
+
+/* OPEN */
 
 .admission-status.open {
     background: #ecfdf3;
     color: #027a48;
 }
 
-.institution-type {
-    background: #eff4ff;
-    color: #1557d6;
+
+/* CLOSED */
+
+.admission-status.closed {
+    background: #fef3f2;
+    color: #b42318;
 }
+
+
+/* CHECK PORTAL */
+
+.admission-status.check {
+    background: #fff7ed;
+    color: #b54708;
+}
+
+
+/* =========================================
+   INSTITUTION TYPE
+========================================= */
+
+.institution-type {
+    display: inline-block;
+
+    align-self: flex-start;
+
+    margin-bottom: 10px;
+
+    color: var(--blue);
+
+    background: #eff6ff;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 850;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================
+   SCHOOL NAME
+========================================= */
 
 .admission-card h3 {
-    margin: 0 0 8px;
-    color: #101828;
-    font-size: 23px;
+    margin: 0 0 5px;
+
+    color: var(--ink);
+
+    font-size: 21px;
+    line-height: 1.25;
+
+    letter-spacing: -.3px;
 }
 
-.admission-title {
+.admission-card h4 {
     margin: 0 0 15px;
-    color: #475467;
-    font-size: 15px;
+
+    color: #667085;
+
+    font-size: 13px;
+    line-height: 1.5;
+
     font-weight: 600;
 }
 
-.admission-location {
-    margin: 0 0 22px;
+
+/* =========================================
+   SCHOOL INFORMATION
+========================================= */
+
+.admission-card p {
+    margin: 0 0 9px;
+
     color: #667085;
-    font-size: 14px;
-}
 
-
-/* ---------- CARD INFO ---------- */
-
-.admission-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 15px 0;
-    border-top: 1px solid #eaecf0;
-    border-bottom: 1px solid #eaecf0;
-    margin-bottom: 20px;
-}
-
-.admission-info div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.admission-info small {
-    color: #98a2b3;
-    font-size: 11px;
-}
-
-.admission-info strong {
-    color: #344054;
     font-size: 13px;
+    line-height: 1.55;
 }
 
-
-/* ---------- VIEW DETAILS BUTTON ---------- */
-
-.view-admission-btn {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #1557d6;
-    border-radius: 9px;
-    background: #ffffff;
-    color: #1557d6;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.view-admission-btn:hover {
-    background: #1557d6;
-    color: #ffffff;
-}
-
-
-/* ---------- NO RESULTS ---------- */
-
-.no-admission-results {
-    display: none;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.no-admission-results h3 {
-    margin-bottom: 8px;
+.admission-card p strong {
     color: #344054;
-}
-
-.no-admission-results p {
-    margin: 0;
-    color: #667085;
-}
-
-
-/* ---------- GUIDANCE CTA ---------- */
-
-.admission-guidance {
-    margin-top: 70px;
-    padding: 40px;
-    border-radius: 20px;
-    background: #1557d6;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.admission-guidance .section-tag {
-    color: #dbe8ff;
-}
-
-.admission-guidance h2 {
-    max-width: 650px;
-    margin: 0 0 10px;
-    font-size: 27px;
-    line-height: 1.3;
-}
-
-.admission-guidance p {
-    max-width: 650px;
-    margin: 0;
-    color: #e5edff;
-    line-height: 1.6;
-}
-
-.guidance-btn {
-    flex-shrink: 0;
-    display: inline-block;
-    padding: 14px 22px;
-    border-radius: 9px;
-    background: #ffffff;
-    color: #1557d6;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    transition: 0.3s ease;
-}
-
-.guidance-btn:hover {
-    background: #eef4ff;
+    font-weight: 750;
 }
 
 
 /* =========================================
-   ADMISSION MODAL
+   CARD BUTTONS
 ========================================= */
 
-.admission-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(16, 24, 40, 0.65);
-    padding: 30px 20px;
-    overflow-y: auto;
+.admission-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+    margin-top: auto;
+    padding-top: 20px;
 }
 
-.admission-modal.active {
-    display: flex;
-    align-items: center;
+.admission-buttons a {
+    display: inline-flex;
+
     justify-content: center;
-}
+    align-items: center;
 
-.admission-modal-content {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 40px;
-    border-radius: 20px;
-    background: #ffffff;
-}
+    min-height: 43px;
 
-.close-admission-modal {
-    position: absolute;
-    top: 15px;
-    right: 18px;
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
-    background: #f2f4f7;
-    color: #344054;
-    font-size: 25px;
-    line-height: 1;
-    cursor: pointer;
-}
+    padding: 10px 12px;
 
-.close-admission-modal:hover {
-    background: #eaecf0;
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-align: center;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
 }
 
 
-/* Modal Content */
+/* PRIMARY BUTTON */
 
-.admission-details h2 {
-    margin: 0 0 10px;
-    color: #101828;
-    font-size: 30px;
-}
-
-.admission-details h4 {
-    margin: 28px 0 10px;
-    color: #1557d6;
-    font-size: 17px;
-}
-
-.admission-details p {
-    color: #475467;
-    line-height: 1.7;
-}
-
-.admission-details ul {
-    padding-left: 20px;
-    color: #475467;
-    line-height: 1.8;
-}
-
-.admission-apply-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 25px;
-    border-radius: 9px;
-    background: #1557d6;
+.admission-buttons .btn-primary {
+    background: var(--blue);
     color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
+
+    border: 1px solid var(--blue);
+}
+
+.admission-buttons .btn-primary:hover {
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
+}
+
+
+/* SECONDARY BUTTON */
+
+.admission-buttons .btn-secondary {
+    background: #ffffff;
+    color: var(--blue);
+
+    border: 1px solid #b9d2fa;
+}
+
+.admission-buttons .btn-secondary:hover {
+    background: #f4f8ff;
+    border-color: var(--blue);
 }
 
 
 /* =========================================
-   RESPONSIVE DESIGN
+   NO RESULTS
 ========================================= */
 
-@media (max-width: 950px) {
+.no-results {
+    display: none;
 
-    .admissions-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    text-align: center;
 
-    .admission-guidance {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    background: #ffffff;
 
+    border: 1px solid var(--line);
+    border-radius: 17px;
+
+    padding: 60px 20px;
+}
+
+.no-results h3 {
+    margin-bottom: 8px;
+
+    color: var(--ink);
+
+    font-size: 21px;
+}
+
+.no-results p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
 }
 
 
-@media (max-width: 650px) {
-
-    .admissions-section {
-        padding: 70px 15px;
-    }
-
-    .admissions-header h2 {
-        font-size: 31px;
-    }
-
-    .admissions-header p {
-        font-size: 15px;
-    }
-
-    .admission-search-box {
-        flex-direction: column;
-        padding: 8px;
-    }
-
-    .admission-search-box input {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .admission-search-box button {
-        min-height: 48px;
-    }
-
-    .admission-filters {
-        flex-direction: column;
-    }
-
-    .admission-filters select {
-        width: 100%;
-    }
-
-    .admissions-list {
-        grid-template-columns: 1fr;
-    }
-
-    .admission-guidance {
-        padding: 30px 22px;
-    }
-
-    .admission-guidance h2 {
-        font-size: 23px;
-    }
-
-    .guidance-btn {
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .admission-modal-content {
-        padding: 30px 20px;
-    }
-
-  }
 /* =========================================
-   ELEVIQ SCHOOL DIRECTORY
+   ADMISSIONS CONTACT SECTION
 ========================================= */
 
-.admissions-page-hero {
-    padding: 90px 20px 70px;
-    background: linear-gradient(
-        135deg,
-        #f5f8ff 0%,
-        #ffffff 55%,
-        #eef4ff 100%
-    );
+.contact-section {
+    padding: 70px 20px;
+
+    background: #0b3f98;
 }
 
+.contact-content {
+    max-width: 1150px;
 
-.admissions-container {
-    width: min(1180px, 92%);
     margin: 0 auto;
 }
 
-
-.admissions-page-hero h1 {
-    margin: 18px 0 15px;
-    font-size: clamp(38px, 6vw, 68px);
-    line-height: 1.05;
-}
-
-
-.admissions-page-hero h1 span {
-    color: #155eef;
-}
-
-
-.admissions-page-hero p {
-    max-width: 720px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #5b6472;
-}
-
-
-.directory-search {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 760px;
-    margin-top: 30px;
-    background: #ffffff;
-    border: 1px solid #dfe5ef;
-    border-radius: 14px;
-    padding: 6px 18px;
-    box-shadow: 0 10px 30px rgba(20, 40, 80, 0.08);
-}
-
-
-.directory-search span {
-    font-size: 25px;
-}
-
-
-.directory-search input {
-    width: 100%;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 15px 5px;
-    font-size: 16px;
-}
-
-
-.directory-filters {
-    display: grid;
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-    gap: 15px;
-    margin: 30px 0 20px;
-}
-
-
-.directory-filters select {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #dfe5ef;
-    border-radius: 10px;
-    background: #ffffff;
-    color: #263142;
-    font-size: 15px;
-    outline: none;
-}
-
-
-.directory-result-bar {
-    margin: 20px 0;
-    color: #687386;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-
-.school-directory-grid {
-    display: grid;
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-    gap: 20px;
-}
-
-
-.school-directory-card {
-    background: #ffffff;
-    border: 1px solid #e4e8ef;
-    border-radius: 16px;
-    padding: 24px;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.school-directory-card:hover {
-    transform: translateY(-4px);
-    box-shadow:
-        0 15px 35px rgba(20, 40, 80, 0.10);
-}
-
-
-.school-card-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-
-.school-type,
-.school-ownership {
-    display: inline-flex;
-    padding: 6px 10px;
-    border-radius: 30px;
-    background: #f1f5ff;
-    color: #155eef;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-
-.school-ownership {
-    background: #f5f5f5;
-    color: #596273;
-}
-
-
-.school-directory-card h3 {
+.contact-content .contact-box {
     margin: 0;
-    font-size: 20px;
-    line-height: 1.35;
-    color: #182230;
-}
-
-
-.school-short-name {
-    margin-top: 6px;
-    color: #155eef;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-
-.school-location {
-    margin: 15px 0 22px;
-    color: #687386;
-    font-size: 14px;
-}
-
-
-.school-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-
-.school-button {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    padding: 12px 14px;
-    border-radius: 9px;
-    font-size: 13px;
-    font-weight: 700;
-    transition: 0.2s ease;
-}
-
-
-.website-button {
-    background: #155eef;
-    color: #ffffff;
-}
-
-
-.website-button:hover {
-    opacity: 0.9;
-}
-
-
-.admission-button {
-    background: #eef4ff;
-    color: #155eef;
-    border: 1px solid #d6e2ff;
-}
-
-
-.admission-button:hover {
-    background: #e1ebff;
-}
-
-
-.school-verification {
-    margin-top: 15px;
-    padding-top: 12px;
-    border-top: 1px solid #edf0f5;
-    font-size: 11px;
-}
-
-
-.verified-badge {
-    color: #087443;
-    font-weight: 600;
-}
-
-
-.portal-unavailable {
-    color: #8a94a6;
-}
-
-
-.no-directory-results {
-    text-align: center;
-    padding: 60px 20px;
-    background: #f8faff;
-    border-radius: 15px;
-}
-
-
-.no-directory-results h3 {
-    margin-bottom: 8px;
-}
-
-
-.no-directory-results p {
-    color: #687386;
-}
-
-
-.directory-note {
-    margin-top: 35px;
-    padding: 20px;
-    background: #fff9e8;
-    border: 1px solid #f3df9a;
-    border-radius: 12px;
-    color: #665522;
-    font-size: 13px;
-    line-height: 1.7;
 }
 
 
 /* =========================================
-   MOBILE
+   TABLET
 ========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-    .school-directory-grid {
+    .admission-filters {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .admission-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
@@ -814,30 +597,124 @@ a{text-decoration:none;color:inherit}
 }
 
 
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 700px) {
 
-    .directory-filters {
-        grid-template-columns: 1fr;
+    .admissions-hero {
+        padding: 65px 18px 45px;
+    }
+
+    .admissions-hero h1 {
+        font-size: clamp(38px, 11vw, 52px);
+
+        letter-spacing: -2px;
+    }
+
+    .admissions-hero p {
+        font-size: 15px;
     }
 
 
-    .school-directory-grid {
-        grid-template-columns: 1fr;
-    }
+    /* SEARCH */
 
+    .admission-search {
+        flex-direction: column;
+        align-items: stretch;
 
-    .admissions-page-hero {
-        padding: 65px 20px 50px;
-    }
+        padding: 7px;
 
-
-    .admissions-page-hero h1 {
-        font-size: 42px;
-    }
-
-
-    .directory-search {
         border-radius: 12px;
     }
 
-      }
+    .admission-search input {
+        width: 100%;
+
+        padding: 14px 12px;
+    }
+
+    .admission-search button {
+        width: 100%;
+
+        min-height: 46px;
+    }
+
+
+    /* FILTERS */
+
+    .admission-filters {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+    .admission-filters select {
+        min-height: 46px;
+    }
+
+
+    /* DIRECTORY */
+
+    .admissions-directory {
+        padding: 55px 16px 70px;
+    }
+
+
+    /* RESULT HEADER */
+
+    .admission-result-header {
+        display: block;
+
+        margin-bottom: 20px;
+    }
+
+    .admission-result-header h2 {
+        margin-bottom: 10px;
+
+        font-size: 22px;
+    }
+
+    .admission-result-count {
+        display: inline-block;
+    }
+
+
+    /* SCHOOL GRID */
+
+    .admission-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    /* SCHOOL CARD */
+
+    .admission-card {
+        padding: 21px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 430px) {
+
+    .admissions-hero h1 {
+        font-size: 37px;
+    }
+
+    .admission-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .admission-buttons a {
+        width: 100%;
+    }
+
+}
