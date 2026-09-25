@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Beginner Digital Skills Course | ELEVIQ</title>
+
+  <meta name="description"
+        content="Learn essential digital skills with ELEVIQ. Master Microsoft Office, CorelDRAW, Photoshop and more for just ₦4,980.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #1769e0;
+      --dark-blue: #0b3f98;
+      --navy: #071b3a;
+      --green: #16845b;
+      --orange: #f79009;
+      --white: #ffffff;
+      --light: #f5f8fc;
+      --text: #101828;
+      --muted: #667085;
+      --border: #e4e7ec;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* TOP BAR */
+
+    .top-bar {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(135deg, #071b3a 0%, #0b3f98 55%, #1769e0 100%);
+      color: white;
+      padding: 65px 0 75px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      color: #8fc1ff;
+    }
+
+    .hero-text {
+      font-size: 18px;
+      color: #e5efff;
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 22px 0;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      font-size: 38px;
+      font-weight: 800;
+    }
+
+    .payment-note {
+      font-size: 13px;
+      color: #d6e5ff;
+    }
+
+    .cta {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--dark-blue);
+      padding: 15px 25px;
+      border-radius: 9px;
+      font-weight: 800;
+      font-size: 16px;
+      transition: .2s;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card h3 {
+      font-size: 21px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .hero-card li:last-child {
+      border-bottom: none;
+    }
+
+    /* TRUST */
+
+    .trust {
+      padding: 22px 0;
+      background: var(--light);
+      text-align: center;
+    }
+
+    .trust p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* COURSE GRID */
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .course-card {
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 25px;
+      background: white;
+      transition: .2s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(16,24,40,.08);
+    }
+
+    .course-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #eaf2ff;
+      font-size: 23px;
+      margin-bottom: 15px;
+    }
+
+    .course-card h3 {
+      margin-bottom: 7px;
+      font-size: 19px;
+    }
+
+    .course-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+      background: var(--light);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .benefit {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      gap: 14px;
+    }
+
+    .check {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      border-radius: 50%;
+      background: #e5f7ef;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+    }
+
+    .benefit h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* WHO */
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .who-card {
+      text-align: center;
+      padding: 22px 15px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .who-card div {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .who-card h3 {
+      font-size: 15px;
+    }
+
+    /* OFFER */
+
+    .offer {
+      background: var(--navy);
+      color: white;
+    }
+
+    .offer-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .offer-box h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      margin-bottom: 15px;
+    }
+
+    .offer-box > p {
+      color: #cbd9ef;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .old-price {
+      color: #aebbd0;
+      text-decoration: line-through;
+      margin-right: 10px;
+    }
+
+    .offer-price {
+      font-size: 44px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .offer .cta {
+      background: #ffffff;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 17px 20px;
+      background: white;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    details p {
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      background: var(--light);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(30px, 5vw, 43px);
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .final-button {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 16px 30px;
+      border-radius: 9px;
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #06152d;
+      color: #b9c7dc;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .hero {
+        padding: 45px 0 55px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .who-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      section {
+        padding: 55px 0;
+      }
+
+      .container {
+        width: 90%;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .price {
+        font-size: 32px;
+      }
+
+      .course-grid,
+      .benefit-grid,
+      .who-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-card {
+        padding: 21px;
+      }
+
+      .offer-price {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    🎓 Limited-time enrollment — Start learning practical digital skills today
+  </div>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container hero-content">
+
+      <div>
+
+        <div class="badge">
+          ELEVIQ DIGITAL SKILLS TRAINING
+        </div>
+
+        <h1>
+          Build Digital Skills That
+          <span>Actually Matter.</span>
+        </h1>
+
+        <p class="hero-text">
+          Start from the basics and learn essential computer and creative
+          skills through practical, easy-to-follow lessons.
+        </p>
+
+        <div class="price-box">
+          <div class="price">₦4,980</div>
+
+          <div class="payment-note">
+            Beginner / Essential Package
+          </div>
+        </div>
+
+        <a href="#register" class="cta">
+          Enroll Now →
+        </a>
+
+      </div>
+
+      <div class="hero-card">
+
+        <h3>What you'll learn</h3>
+
+        <ul>
+          <li>✓ Windows & Computer Basics</li>
+          <li>✓ Microsoft Word</li>
+          <li>✓ Microsoft PowerPoint</li>
+          <li>✓ Microsoft Excel</li>
+          <li>✓ CorelDRAW</li>
+          <li>✓ Photoshop</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- TRUST -->
+
+  <div class="trust">
+    <div class="container">
+      <p>
+        Designed for beginners • Learn at your own pace • Practical digital skills
+      </p>
+    </div>
+  </div>
+
+
+  <!-- COURSES -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>What's Inside the Course?</h2>
+
+        <p>
+          Get introduced to some of the most useful digital tools for
+          school, work, business and everyday life.
+        </p>
+
+      </div>
+
+
+      <div class="course-grid">
+
+        <div class="course-card">
+          <div class="course-icon">🖥️</div>
+          <h3>Windows 10</h3>
+          <p>
+            Understand the fundamentals of using a Windows computer
+            confidently.
+          </p>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">📝</div>
+          <h3>Microsoft Word</h3>
+          <p>
+            Create, format and manage professional documents.
+          </p>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">📊</div>
+          <h3>Microsoft Excel</h3>
+          <p>
+            Learn spreadsheets, calculations, tables and useful Excel tools.
+          </p>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">📽️</div>
+          <h3>PowerPoint</h3>
+          <p>
+            Create attractive presentations for school, work and business.
+          </p>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">🎨</div>
+          <h3>CorelDRAW</h3>
+          <p>
+            Get started with graphic design and creative digital work.
+          </p>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">🖼️</div>
+          <h3>Photoshop</h3>
+          <p>
+            Learn the foundations of image editing and digital design.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BENEFITS -->
+
+  <section class="benefits">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>What You Get</h2>
+
+        <p>
+          More than just watching lessons. The package is designed to help
+          you actually learn and practise.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-grid">
+
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h3>Pre-recorded Lessons</h3>
+            <p>
+              Learn whenever it is convenient for you.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h3>Learn at Your Own Pace</h3>
+            <p>
+              Pause, replay and revisit lessons whenever necessary.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h3>Certificate</h3>
+            <p>
+              Receive a certificate upon successful completion.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="check">✓</div>
+          <div>
+            <h3>1-on-1 Coaching</h3>
+            <p>
+              Get additional guidance when you need help.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHO IT IS FOR -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>Who Is This For?</h2>
+
+        <p>
+          You don't need to be an expert before starting.
+        </p>
+
+      </div>
+
+
+      <div class="who-grid">
+
+        <div class="who-card">
+          <div>🎓</div>
+          <h3>Students</h3>
+        </div>
+
+        <div class="who-card">
+          <div>💼</div>
+          <h3>Job Seekers</h3>
+        </div>
+
+        <div class="who-card">
+          <div>🚀</div>
+          <h3>Entrepreneurs</h3>
+        </div>
+
+        <div class="who-card">
+          <div>💻</div>
+          <h3>Beginners</h3>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OFFER -->
+
+  <section class="offer" id="register">
+
+    <div class="container">
+
+      <div class="offer-box">
+
+        <h2>Start Learning Today</h2>
+
+        <p>
+          Get access to the Beginner / Essential Package and start
+          building practical digital skills.
+        </p>
+
+        <div class="offer-price">
+          ₦4,980
+        </div>
+
+        <a
+          class="cta"
+          href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20want%20to%20register%20for%20the%20Beginner%20%2F%20Essential%20Package%20for%20%E2%82%A64%2C980."
+          target="_blank"
+        >
+          Register via WhatsApp →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>Frequently Asked Questions</h2>
+
+      </div>
+
+
+      <div class="faq">
+
+        <details>
+          <summary>Is this course suitable for beginners?</summary>
+          <p>
+            Yes. The package is designed to introduce learners to
+            essential digital and creative tools.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I learn at my own pace?</summary>
+          <p>
+            Yes. The package includes pre-recorded lessons that allow
+            you to learn according to your schedule.
+          </p>
+        </details>
+
+        <details>
+          <summary>Will I receive a certificate?</summary>
+          <p>
+            Yes. A certificate is provided upon successful completion
+            of the course requirements.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I register?</summary>
+          <p>
+            Click any of the registration buttons on this page to
+            contact ELEVIQ and begin the registration process.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need previous computer experience?</summary>
+          <p>
+            No. The course starts with foundational skills and progresses
+            into the different tools included in the package.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+
+  <section class="final-cta">
+
+    <div class="container">
+
+      <h2>Ready to Start?</h2>
+
+      <p>
+        Take the first step toward building practical digital skills.
+      </p>
+
+      <a
+        class="final-button"
+        href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20want%20to%20register%20for%20the%20Beginner%20%2F%20Essential%20Package."
+        target="_blank"
+      >
+        Get Started — ₦4,980
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <strong>ELEVIQ</strong><br>
+
+    Digital Skills • Education • Opportunities
+
+    <br><br>
+
+    © 2026 ELEVIQ. All rights reserved.
+
+  </footer>
+
+</body>
+  </html>
