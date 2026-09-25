@@ -1055,726 +1055,128 @@
 
         search.addEventListener(
           "input",
- ross Nigeria.
-    When you find an opportunity, ELEVIQ takes you directly to
-    the institution's official website or admission portal.
-  </p></section><!-- =========================================
-     MAIN DATABASE
-========================================= --><section class="admissions-container">  <!-- SEARCH -->  <div class="admission-search-wrapper"><form
-  class="admission-search-box"
-  id="admissionSearchForm"
->
+          filterAdmissions
+        );
 
-  <input
-    type="search"
-    id="admissionSearch"
-    placeholder="Search school, programme, state or admission type..."
-    aria-label="Search admission opportunities"
-  >
 
-  <button type="submit">
-    Search
-  </button>
+        searchButton.addEventListener(
+          "click",
+          filterAdmissions
+        );
 
-</form>
 
-  </div>  <!-- FILTERS -->  <div class="admission-filters"><select id="institutionFilter">
+        institution.addEventListener(
+          "change",
+          filterAdmissions
+        );
 
-  <option value="all">
-    All Institutions
-  </option>
 
-  <option value="university">
-    Universities
-  </option>
+        ownership.addEventListener(
+          "change",
+          filterAdmissions
+        );
 
-  <option value="polytechnic">
-    Polytechnics
-  </option>
 
-  <option value="college">
-    Colleges
-  </option>
+        admissionType.addEventListener(
+          "change",
+          filterAdmissions
+        );
 
-</select>
 
+        status.addEventListener(
+          "change",
+          filterAdmissions
+        );
 
-<select id="ownershipFilter">
 
-  <option value="all">
-    All Ownership
-  </option>
+        search.addEventListener(
+          "keydown",
+          function (event) {
 
-  <option value="federal">
-    Federal
-  </option>
+            if (
+              event.key === "Enter"
+            ) {
 
-  <option value="state">
-    State
-  </option>
+              filterAdmissions();
 
-  <option value="private">
-    Private
-  </option>
+            }
 
-</select>
+          }
+        );
 
 
-<select id="admissionTypeFilter">
+        /*
+          MOBILE MENU
+        */
 
-  <option value="all">
-    All Admission Types
-  </option>
+        const menuButton =
+          document.getElementById(
+            "admissionMenuButton"
+          );
 
-  <option value="utme">
-    UTME
-  </option>
+        const navLinks =
+          document.getElementById(
+            "admissionNavLinks"
+          );
 
-  <option value="post-utme">
-    Post-UTME
-  </option>
 
-  <option value="direct-entry">
-    Direct Entry
-  </option>
+        menuButton.addEventListener(
+          "click",
+          function () {
 
-  <option value="jupeb">
-    JUPEB
-  </option>
+            const isOpen =
+              navLinks.classList.toggle(
+                "active"
+              );
 
-  <option value="pre-degree">
-    Pre-degree
-  </option>
+            menuButton.setAttribute(
+              "aria-expanded",
+              String(isOpen)
+            );
 
-  <option value="ijmb">
-    IJMB
-  </option>
+          }
+        );
 
-</select>
 
+        navLinks
+          .querySelectorAll("a")
+          .forEach(
+            function (link) {
 
-<select id="statusFilter">
+              link.addEventListener(
+                "click",
+                function () {
 
-  <option value="all">
-    All Status
-  </option>
+                  navLinks.classList.remove(
+                    "active"
+                  );
 
-  <option value="open">
-    Open
-  </option>
+                  menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                  );
 
-  <option value="closed">
-    Closed
-  </option>
+                }
+              );
 
-  <option value="check">
-    Check Official Portal
-  </option>
+            }
+          );
 
-</select>
 
-  </div>  <!-- DATABASE HEADER -->  <div class="database-header"><div>
+        /*
+          IMPORTANT:
+          Run this immediately after all cards
+          have loaded. This fixes the old
+          "0 opportunities" problem.
+        */
 
-  <h2>
-    Admission Opportunities
-  </h2>
+        filterAdmissions();
 
-  <p>
-    Official links only.
-  </p>
+      }
+    );
 
-</div>
+  </script>
 
-<div
-  class="result-count"
-  id="resultCount"
->
-  0 opportunities
-</div>
-
-  </div>  <!-- =========================================
-       ADMISSION CARDS
-  ========================================= -->  <div
-    class="admissions-list"
-    id="admissionsList"
-  ><!-- =====================================
-     LAUTECH JUPEB
-====================================== -->
-
-<article
-  class="admission-card"
-  data-institution="university"
-  data-ownership="state"
-  data-type="jupeb"
-  data-status="open"
-  data-search="LAUTECH Ladoke Akintola University Technology Ogbomoso Oyo JUPEB Joint Universities Preliminary Examinations Board"
->
-
-  <div class="admission-card-top">
-
-    <span class="admission-status status-open">
-      Open
-    </span>
-
-    <span class="institution-type">
-      State University
-    </span>
-
-  </div>
-
-  <h3>
-    LAUTECH
-  </h3>
-
-  <p class="admission-title">
-    JUPEB Programme
-  </p>
-
-  <p class="admission-location">
-    📍 Ogbomoso, Oyo State
-  </p>
-
-  <div class="admission-info">
-
-    <div>
-
-      <small>
-        Admission Type
-      </small>
-
-      <strong>
-        JUPEB
-      </strong>
-
-    </div>
-
-    <div>
-
-      <small>
-        Session
-      </small>
-
-      <strong>
-        2026/2027
-      </strong>
-
-    </div>
-
-  </div>
-
-  <div class="admission-actions">
-
-    <a
-      class="admission-btn official-btn"
-      href="https://www.apply.lautech.edu.ng/en/logon"
-      target="_blank"
-      rel="noopener"
-    >
-      Official Portal →
-    </a>
-
-    <a
-      class="admission-btn website-btn"
-      href="https://lautech.edu.ng/"
-      target="_blank"
-      rel="noopener"
-    >
-      Website
-    </a>
-
-  </div>
-
-</article>
-
-
-<!-- =====================================
-     OAUSTECH
-====================================== -->
-
-<article
-  class="admission-card"
-  data-institution="university"
-  data-ownership="state"
-  data-type="post-utme"
-  data-status="closed"
-  data-search="OAUSTECH Olusegun Agagu University Science Technology Okitipupa Ondo Post UTME Direct Entry"
->
-
-  <div class="admission-card-top">
-
-    <span class="admission-status status-closed">
-      Closed
-    </span>
-
-    <span class="institution-type">
-      State University
-    </span>
-
-  </div>
-
-  <h3>
-    OAUSTECH
-  </h3>
-
-  <p class="admission-title">
-    2026/2027 Post-UTME
-  </p>
-
-  <p class="admission-location">
-    📍 Okitipupa, Ondo State
-  </p>
-
-  <div class="admission-info">
-
-    <div>
-
-      <small>
-        Admission Type
-      </small>
-
-      <strong>
-        Post-UTME
-      </strong>
-
-    </div>
-
-    <div>
-
-      <small>
-        Session
-      </small>
-
-      <strong>
-        2026/2027
-      </strong>
-
-    </div>
-
-  </div>
-
-  <div class="admission-actions">
-
-    <a
-      class="admission-btn official-btn"
-      href="https://portal.oaustech.edu.ng/apply/"
-      target="_blank"
-      rel="noopener"
-    >
-      Official Portal →
-    </a>
-
-    <a
-      class="admission-btn website-btn"
-      href="https://oaustech.edu.ng/"
-      target="_blank"
-      rel="noopener"
-    >
-      Website
-    </a>
-
-  </div>
-
-</article>
-
-
-<!-- =====================================
-     FUTMINNA
-====================================== -->
-
-<article
-  class="admission-card"
-  data-institution="university"
-  data-ownership="federal"
-  data-type="post-utme"
-  data-status="open"
-  data-search="Federal University Technology Minna FUTMINNA Niger Post UTME admissions"
->
-
-  <div class="admission-card-top">
-
-    <span class="admission-status status-open">
-      Open
-    </span>
-
-    <span class="institution-type">
-      Federal University
-    </span>
-
-  </div>
-
-  <h3>
-    FUTMINNA
-  </h3>
-
-  <p class="admission-title">
-    Undergraduate Admission
-  </p>
-
-  <p class="admission-location">
-    📍 Minna, Niger State
-  </p>
-
-  <div class="admission-info">
-
-    <div>
-
-      <small>
-        Admission Type
-      </small>
-
-      <strong>
-        UTME / DE
-      </strong>
-
-    </div>
-
-    <div>
-
-      <small>
-        Session
-      </small>
-
-      <strong>
-        2026/2027
-      </strong>
-
-    </div>
-
-  </div>
-
-  <div class="admission-actions">
-
-    <a
-      class="admission-btn official-btn"
-      href="https://eportal.futminna.edu.ng/ePortal_V2/utme/"
-      target="_blank"
-      rel="noopener"
-    >
-      Official Portal →
-    </a>
-
-    <a
-      class="admission-btn website-btn"
-      href="https://futminna.edu.ng/"
-      target="_blank"
-      rel="noopener"
-    >
-      Website
-    </a>
-
-  </div>
-
-</article>
-
-
-<!-- =====================================
-     ABU
-====================================== -->
-
-<article
-  class="admission-card"
-  data-institution="university"
-  data-ownership="federal"
-  data-type="post-utme"
-  data-status="open"
-  data-search="Ahmadu Bello University ABU Zaria Kaduna Post UTME Direct Entry"
->
-
-  <div class="admission-card-top">
-
-    <span class="admission-status status-open">
-      Open
-    </span>
-
-    <span class="institution-type">
-      Federal University
-    </span>
-
-  </div>
-
-  <h3>
-    Ahmadu Bello University
-  </h3>
-
-  <p class="admission-title">
-    Post-UTME / Direct Entry
-  </p>
-
-  <p class="admission-location">
-    📍 Zaria, Kaduna State
-  </p>
-
-  <div class="admission-info">
-
-    <div>
-
-      <small>
-        Admission Type
-      </small>
-
-      <strong>
-        UTME / DE
-      </strong>
-
-    </div>
-
-    <div>
-
-      <small>
-        Session
-      </small>
-
-      <strong>
-        2026/2027
-      </strong>
-
-    </div>
-
-  </div>
-
-  <div class="admission-actions">
-
-    <a
-      class="admission-btn official-btn"
-      href="https://portal.abu.edu.ng/forms/putme"
-      target="_blank"
-      rel="noopener"
-    >
-      Official Portal →
-    </a>
-
-    <a
-      class="admission-btn website-btn"
-      href="https://abu.edu.ng/"
-      target="_blank"
-      rel="noopener"
-    >
-      Website
-    </a>
-
-  </div>
-
-</article>
-
-
-<!-- =====================================
-     UNIVERSITY OF IBADAN
-====================================== -->
-
-<article
-  class="admission-card"
-  data-institution="university"
-  data-ownership="federal"
-  data-type="post-utme"
-  data-status="closed"
-  data-search="University Ibadan UI Oyo Post UTME Direct Entry admission"
->
-
-  <div class="admission-card-top">
-
-    <span class="admission-status status-closed">
-      Closed
-    </span>
-
-    <span class="institution-type">
-      Federal University
-    </span>
-
-  </div>
-
-  <h3>
-    University of Ibadan
-  </h3>
-
-  <p class="admission-title">
-    2026/2027 Screening
-  </p>
-
-  <p class="admission-location">
-    📍 Ibadan, Oyo State
-  </p>
-
-  <div class="admission-info">
-
-    <div>
-
-      <small>
-        Admission Type
-      </small>
-
-      <strong>
-        UTME / DE
-      </strong>
-
-    </div>
-
-    <div>
-
-      <small>
-        Session
-      </small>
-
-      <strong>
-        2026/2027
-      </strong>
-
-    </div>
-
-  </div>
-
-  <div class="admission-actions">
-
-    <a
-      class="admission-btn official-btn"
-      href="https://admissions.ui.edu.ng/"
-      target="_blank"
-      rel="noopener"
-    >
-      Official Portal →
-    </a>
-
-    <a
-      class="admission-btn website-btn"
-      href="https://ui.edu.ng/"
-      target="_blank"
-      rel="noopener"
-    >
-      Website
-    </a>
-
-  </div>
-
-</article>
-
-
-<!-- =====================================
-     UNIVERSITY OF ILORIN
-====================================== -->
-
-<article
-  class="admission-card"
-  data-institution="university"
-  data-ownership="federal"
-  data-type="post-utme"
-  data-status="closed"
-  data-search="University Ilorin UNILORIN Kwara Post UTME admission screening"
->
-
-  <div class="admission-card-top">
-
-    <span class="admission-status status-closed">
-      Closed
-    </span>
-
-    <span class="institution-type">
-      Federal University
-    </span>
-
-  </div>
-
-  <h3>
-    University of Ilorin
-  </h3>
-
-  <p class="admission-title">
-    2026/2027 Pre-Admission Screening
-  </p>
-
-  <p class="admission-location">
-    📍 Ilorin, Kwara State
-  </p>
-
-  <div class="admission-info">
-
-                class="footer-logo"
-                href="index.html"
-            >
-                <img
-                    src="eleviq-logo.png"
-                    alt="ELEVIQ"
-                >
-            </a>
-
-            <p>
-                Your smarter pathway to educational opportunities.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h4>Explore</h4>
-
-            <a href="index.html#opportunities">
-                Opportunities
-            </a>
-
-            <a href="admissions.html">
-                Admissions
-            </a>
-
-            <a href="index.html#services">
-                Services
-            </a>
-
-            <a href="index.html#resources">
-                Resources
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h4>Company</h4>
-
-            <a href="index.html#about">
-                About
-            </a>
-
-            <a href="index.html#contact">
-                Contact
-            </a>
-
-            <a href="mailto:eleviq1@gmail.com">
-                Email us
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h4>Connect</h4>
-
-            <a
-                href="https://wa.me/2349011582752"
-                target="_blank"
-                rel="noopener"
-            >
-                WhatsApp
-            </a>
-
-            <a href="mailto:eleviq1@gmail.com">
-                eleviq1@gmail.com
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        © 2026 ELEVIQ. All rights reserved.
-
-    </div>
-
-</footer>
-
-
-<script src="admissions.js"></script>
 
 </body>
-          </html>
+</html>
