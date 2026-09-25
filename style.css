@@ -56,3 +56,482 @@ a{text-decoration:none;color:inherit}
     width: 115px;
   }
 }
+/* =========================================
+   ELEVIQ — ADMISSIONS SECTION
+========================================= */
+
+.admissions-section {
+    padding: 100px 20px;
+    background: #f7f9fc;
+}
+
+.admissions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.admissions-header {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #1557d6;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.admissions-header h2 {
+    margin: 0 0 15px;
+    color: #111827;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.admissions-header h2 span {
+    color: #1557d6;
+}
+
+.admissions-header p {
+    margin: 0;
+    color: #667085;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ---------- SEARCH ---------- */
+
+.admission-search-box {
+    max-width: 850px;
+    margin: 0 auto 25px;
+    display: flex;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 14px;
+    border: 1px solid #e4e7ec;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+}
+
+.admission-search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 16px 18px;
+    font-size: 15px;
+    color: #101828;
+    background: transparent;
+}
+
+.admission-search-box input::placeholder {
+    color: #98a2b3;
+}
+
+.admission-search-box button {
+    border: none;
+    background: #1557d6;
+    color: #ffffff;
+    padding: 0 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admission-search-box button:hover {
+    background: #0e43aa;
+}
+
+
+/* ---------- FILTERS ---------- */
+
+.admission-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.admission-filters select {
+    min-width: 190px;
+    padding: 13px 16px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #344054;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.admission-filters select:focus {
+    border-color: #1557d6;
+}
+
+
+/* ---------- ADMISSION GRID ---------- */
+
+.admissions-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+/* ---------- CARD ---------- */
+
+.admission-card {
+    background: #ffffff;
+    border: 1px solid #eaecf0;
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 20px rgba(16, 24, 40, 0.04);
+}
+
+.admission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(16, 24, 40, 0.10);
+}
+
+.admission-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.admission-status,
+.institution-type {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.admission-status.open {
+    background: #ecfdf3;
+    color: #027a48;
+}
+
+.institution-type {
+    background: #eff4ff;
+    color: #1557d6;
+}
+
+.admission-card h3 {
+    margin: 0 0 8px;
+    color: #101828;
+    font-size: 23px;
+}
+
+.admission-title {
+    margin: 0 0 15px;
+    color: #475467;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.admission-location {
+    margin: 0 0 22px;
+    color: #667085;
+    font-size: 14px;
+}
+
+
+/* ---------- CARD INFO ---------- */
+
+.admission-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 15px 0;
+    border-top: 1px solid #eaecf0;
+    border-bottom: 1px solid #eaecf0;
+    margin-bottom: 20px;
+}
+
+.admission-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.admission-info small {
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+.admission-info strong {
+    color: #344054;
+    font-size: 13px;
+}
+
+
+/* ---------- VIEW DETAILS BUTTON ---------- */
+
+.view-admission-btn {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #1557d6;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #1557d6;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.view-admission-btn:hover {
+    background: #1557d6;
+    color: #ffffff;
+}
+
+
+/* ---------- NO RESULTS ---------- */
+
+.no-admission-results {
+    display: none;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.no-admission-results h3 {
+    margin-bottom: 8px;
+    color: #344054;
+}
+
+.no-admission-results p {
+    margin: 0;
+    color: #667085;
+}
+
+
+/* ---------- GUIDANCE CTA ---------- */
+
+.admission-guidance {
+    margin-top: 70px;
+    padding: 40px;
+    border-radius: 20px;
+    background: #1557d6;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.admission-guidance .section-tag {
+    color: #dbe8ff;
+}
+
+.admission-guidance h2 {
+    max-width: 650px;
+    margin: 0 0 10px;
+    font-size: 27px;
+    line-height: 1.3;
+}
+
+.admission-guidance p {
+    max-width: 650px;
+    margin: 0;
+    color: #e5edff;
+    line-height: 1.6;
+}
+
+.guidance-btn {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #1557d6;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.guidance-btn:hover {
+    background: #eef4ff;
+}
+
+
+/* =========================================
+   ADMISSION MODAL
+========================================= */
+
+.admission-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(16, 24, 40, 0.65);
+    padding: 30px 20px;
+    overflow-y: auto;
+}
+
+.admission-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admission-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: #ffffff;
+}
+
+.close-admission-modal {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #f2f4f7;
+    color: #344054;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.close-admission-modal:hover {
+    background: #eaecf0;
+}
+
+
+/* Modal Content */
+
+.admission-details h2 {
+    margin: 0 0 10px;
+    color: #101828;
+    font-size: 30px;
+}
+
+.admission-details h4 {
+    margin: 28px 0 10px;
+    color: #1557d6;
+    font-size: 17px;
+}
+
+.admission-details p {
+    color: #475467;
+    line-height: 1.7;
+}
+
+.admission-details ul {
+    padding-left: 20px;
+    color: #475467;
+    line-height: 1.8;
+}
+
+.admission-apply-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 25px;
+    border-radius: 9px;
+    background: #1557d6;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 950px) {
+
+    .admissions-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admission-guidance {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .admissions-section {
+        padding: 70px 15px;
+    }
+
+    .admissions-header h2 {
+        font-size: 31px;
+    }
+
+    .admissions-header p {
+        font-size: 15px;
+    }
+
+    .admission-search-box {
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    .admission-search-box input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .admission-search-box button {
+        min-height: 48px;
+    }
+
+    .admission-filters {
+        flex-direction: column;
+    }
+
+    .admission-filters select {
+        width: 100%;
+    }
+
+    .admissions-list {
+        grid-template-columns: 1fr;
+    }
+
+    .admission-guidance {
+        padding: 30px 22px;
+    }
+
+    .admission-guidance h2 {
+        font-size: 23px;
+    }
+
+    .guidance-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .admission-modal-content {
+        padding: 30px 20px;
+    }
+
+  }
