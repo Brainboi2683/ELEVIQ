@@ -35,3 +35,24 @@ a{text-decoration:none;color:inherit}
 
 .search-highlight{animation:cardPulse 2.2s ease}
 @keyframes cardPulse{0%,100%{box-shadow:0 0 0 0 rgba(23,105,224,0)}35%{box-shadow:0 0 0 5px rgba(23,105,224,.25)}}
+.logo img {
+  width: 145px;
+  height: auto;
+  display: block;
+}
+
+.footer-logo img {
+  width: 125px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .logo img {
+    width: 120px;
+  }
+
+  .footer-logo img {
+    width: 115px;
+  }
+}
