@@ -4,29 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Beginner Digital Skills Course | ELEVIQ</title>
+  <title>Master Computer & Office Skills | ELEVIQ</title>
 
-  <meta name="description"
-        content="Learn essential digital skills with ELEVIQ. Master Microsoft Office, CorelDRAW, Photoshop and more for just ₦4,980.">
+  <meta
+    name="description"
+    content="Master essential computer and office skills with ELEVIQ. Learn Windows 10, Microsoft Word, Excel and PowerPoint for ₦4,980."
+  >
 
   <style>
+    /* ================================
+       PRODUCT 1 LANDING PAGE
+       ELEVIQ
+       ================================ */
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     :root {
       --blue: #1769e0;
-      --dark-blue: #0b3f98;
+      --blue-dark: #0b3f98;
       --navy: #071b3a;
       --green: #16845b;
-      --orange: #f79009;
+      --green-dark: #0d6847;
       --white: #ffffff;
-      --light: #f5f8fc;
-      --text: #101828;
-      --muted: #667085;
+      --black: #101828;
+      --gray: #667085;
+      --light: #f6f9fd;
       --border: #e4e7ec;
+      --yellow: #fdb022;
     }
 
     html {
@@ -35,7 +43,7 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
+      color: var(--black);
       background: var(--white);
       line-height: 1.6;
     }
@@ -44,14 +52,21 @@
       text-decoration: none;
     }
 
-    .container {
-      width: min(1100px, 92%);
-      margin: auto;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    /* TOP BAR */
+    .p1-container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
 
-    .top-bar {
+    /* ================================
+       TOP BAR
+       ================================ */
+
+    .p1-topbar {
       background: var(--navy);
       color: white;
       text-align: center;
@@ -60,425 +75,597 @@
       font-weight: 600;
     }
 
-    /* HERO */
+    /* ================================
+       HERO
+       ================================ */
 
-    .hero {
+    .p1-hero {
       background:
-        linear-gradient(135deg, #071b3a 0%, #0b3f98 55%, #1769e0 100%);
+        radial-gradient(circle at top right, rgba(23,105,224,.35), transparent 35%),
+        linear-gradient(135deg, #071b3a, #0b3f98);
       color: white;
       padding: 65px 0 75px;
-      overflow: hidden;
     }
 
-    .hero-content {
+    .p1-hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 45px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 55px;
       align-items: center;
     }
 
-    .badge {
+    .p1-label {
       display: inline-block;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.25);
       padding: 7px 13px;
       border-radius: 30px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
       font-size: 13px;
       font-weight: 700;
       margin-bottom: 18px;
     }
 
-    .hero h1 {
-      font-size: clamp(36px, 5vw, 58px);
+    .p1-hero h1 {
+      font-size: clamp(38px, 5vw, 58px);
       line-height: 1.08;
+      letter-spacing: -1.2px;
       margin-bottom: 20px;
-      letter-spacing: -1px;
     }
 
-    .hero h1 span {
+    .p1-hero h1 span {
       color: #8fc1ff;
     }
 
-    .hero-text {
+    .p1-hero-description {
+      color: #e2ecff;
       font-size: 18px;
-      color: #e5efff;
       max-width: 650px;
       margin-bottom: 25px;
     }
 
-    .price-box {
+    .p1-price-row {
       display: flex;
       align-items: center;
       gap: 15px;
-      margin: 22px 0;
       flex-wrap: wrap;
+      margin: 22px 0;
     }
 
-    .price {
-      font-size: 38px;
+    .p1-price {
+      font-size: 40px;
       font-weight: 800;
     }
 
-    .payment-note {
-      font-size: 13px;
-      color: #d6e5ff;
-    }
-
-    .cta {
-      display: inline-block;
-      background: #ffffff;
-      color: var(--dark-blue);
-      padding: 15px 25px;
-      border-radius: 9px;
-      font-weight: 800;
-      font-size: 16px;
-      transition: .2s;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 20px;
-      padding: 28px;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-card h3 {
-      font-size: 21px;
-      margin-bottom: 18px;
-    }
-
-    .hero-card ul {
-      list-style: none;
-    }
-
-    .hero-card li {
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-
-    .hero-card li:last-child {
-      border-bottom: none;
-    }
-
-    /* TRUST */
-
-    .trust {
-      padding: 22px 0;
-      background: var(--light);
-      text-align: center;
-    }
-
-    .trust p {
-      color: var(--muted);
+    .p1-price-label {
+      color: #d9e6ff;
       font-size: 14px;
     }
 
-    /* GENERAL */
-
-    section {
-      padding: 70px 0;
+    .p1-main-button {
+      display: inline-block;
+      padding: 15px 25px;
+      background: white;
+      color: var(--blue-dark);
+      border-radius: 9px;
+      font-weight: 800;
+      transition: .2s;
     }
 
-    .section-heading {
+    .p1-main-button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* HERO IMAGE CARD */
+
+    .p1-hero-image {
+      background: white;
+      border-radius: 20px;
+      padding: 10px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.18);
+    }
+
+    .p1-hero-image img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .p1-image-placeholder {
+      height: 390px;
+      border-radius: 14px;
+      background:
+        linear-gradient(
+          135deg,
+          #eaf2ff,
+          #d9e8ff
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 42px;
+      padding: 30px;
+      color: var(--blue-dark);
     }
 
-    .section-heading h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      margin-bottom: 12px;
+    .p1-image-placeholder strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    /* ================================
+       TRUST STRIP
+       ================================ */
+
+    .p1-trust {
+      background: var(--light);
+      padding: 18px 0;
+      text-align: center;
+    }
+
+    .p1-trust p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* ================================
+       SECTION
+       ================================ */
+
+    .p1-section {
+      padding: 75px 0;
+    }
+
+    .p1-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 45px;
+    }
+
+    .p1-heading h2 {
       color: var(--navy);
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 12px;
     }
 
-    .section-heading p {
-      color: var(--muted);
+    .p1-heading p {
+      color: var(--gray);
     }
 
-    /* COURSE GRID */
+    /* ================================
+       COURSE CARDS
+       ================================ */
 
-    .course-grid {
+    .p1-course-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .p1-course-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      background: white;
+      transition: .2s;
+    }
+
+    .p1-course-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(16,24,40,.08);
+    }
+
+    .p1-course-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      background: #eaf2ff;
+      border-radius: 13px;
+      font-size: 25px;
+      margin-bottom: 16px;
+    }
+
+    .p1-course-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .p1-course-card p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* ================================
+       BENEFITS
+       ================================ */
+
+    .p1-benefits-section {
+      background: var(--light);
+    }
+
+    .p1-benefits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .p1-benefit {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 23px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .p1-check {
+      width: 31px;
+      height: 31px;
+      min-width: 31px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #e5f7ef;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .p1-benefit h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .p1-benefit p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* ================================
+       LEARNER / CLASS IMAGE SECTION
+       ================================ */
+
+    .p1-gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .course-card {
+    .p1-gallery-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--light);
       border: 1px solid var(--border);
-      border-radius: 15px;
+    }
+
+    .p1-gallery-placeholder {
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       padding: 25px;
-      background: white;
-      transition: .2s;
-    }
-
-    .course-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(16,24,40,.08);
-    }
-
-    .course-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #eaf2ff;
-      font-size: 23px;
-      margin-bottom: 15px;
-    }
-
-    .course-card h3 {
-      margin-bottom: 7px;
-      font-size: 19px;
-    }
-
-    .course-card p {
-      color: var(--muted);
+      background: linear-gradient(135deg, #eaf2ff, #f6f9fd);
+      color: var(--gray);
       font-size: 14px;
     }
 
-    /* BENEFITS */
-
-    .benefits {
-      background: var(--light);
+    .p1-gallery-caption {
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 700;
     }
 
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      max-width: 850px;
-      margin: auto;
-    }
+    /* ================================
+       WHO IT IS FOR
+       ================================ */
 
-    .benefit {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-      display: flex;
-      gap: 14px;
-    }
-
-    .check {
-      width: 28px;
-      height: 28px;
-      flex: 0 0 28px;
-      border-radius: 50%;
-      background: #e5f7ef;
-      color: var(--green);
-      display: grid;
-      place-items: center;
-      font-weight: bold;
-    }
-
-    .benefit h3 {
-      font-size: 16px;
-      margin-bottom: 4px;
-    }
-
-    .benefit p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* WHO */
-
-    .who-grid {
+    .p1-audience {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+      gap: 16px;
     }
 
-    .who-card {
+    .p1-audience-card {
       text-align: center;
-      padding: 22px 15px;
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 15px;
+      padding: 23px 15px;
     }
 
-    .who-card div {
-      font-size: 27px;
+    .p1-audience-card .icon {
+      font-size: 28px;
       margin-bottom: 8px;
     }
 
-    .who-card h3 {
+    .p1-audience-card h3 {
       font-size: 15px;
     }
 
-    /* OFFER */
+    /* ================================
+       OFFER
+       ================================ */
 
-    .offer {
+    .p1-offer {
       background: var(--navy);
       color: white;
     }
 
-    .offer-box {
+    .p1-offer-box {
       max-width: 850px;
       margin: auto;
       text-align: center;
     }
 
-    .offer-box h2 {
-      font-size: clamp(30px, 5vw, 44px);
-      margin-bottom: 15px;
+    .p1-offer-box h2 {
+      font-size: clamp(30px, 5vw, 45px);
+      margin-bottom: 14px;
     }
 
-    .offer-box > p {
-      color: #cbd9ef;
-      max-width: 650px;
-      margin: 0 auto 25px;
+    .p1-offer-box p {
+      color: #cad8ed;
+      margin-bottom: 25px;
     }
 
-    .old-price {
-      color: #aebbd0;
-      text-decoration: line-through;
-      margin-right: 10px;
-    }
-
-    .offer-price {
-      font-size: 44px;
+    .p1-offer-price {
+      font-size: 46px;
       font-weight: 800;
-      margin-bottom: 22px;
+      margin-bottom: 25px;
     }
 
-    .offer .cta {
-      background: #ffffff;
+    /* ================================
+       REGISTRATION FORM
+       ================================ */
+
+    .p1-register {
+      background: var(--light);
     }
 
-    /* FAQ */
+    .p1-form-wrapper {
+      max-width: 760px;
+      margin: auto;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 15px 45px rgba(16,24,40,.06);
+    }
 
-    .faq {
+    .p1-form-heading {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .p1-form-heading h2 {
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .p1-form-heading p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .p1-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .p1-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .p1-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .p1-field label {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .p1-field input,
+    .p1-field select,
+    .p1-field textarea {
+      width: 100%;
+      border: 1px solid #d0d5dd;
+      border-radius: 9px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      background: white;
+    }
+
+    .p1-field input:focus,
+    .p1-field select:focus,
+    .p1-field textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23,105,224,.1);
+    }
+
+    .p1-field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .p1-submit {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      background: var(--blue);
+      color: white;
+      padding: 16px;
+      border-radius: 9px;
+      font-size: 16px;
+      font-weight: 800;
+      margin-top: 20px;
+    }
+
+    .p1-submit:hover {
+      background: var(--blue-dark);
+    }
+
+    .p1-form-note {
+      text-align: center;
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* ================================
+       FAQ
+       ================================ */
+
+    .p1-faq {
       max-width: 800px;
       margin: auto;
     }
 
-    details {
+    .p1-faq details {
       border: 1px solid var(--border);
       border-radius: 12px;
-      margin-bottom: 12px;
       padding: 17px 20px;
-      background: white;
+      margin-bottom: 12px;
     }
 
-    summary {
+    .p1-faq summary {
       cursor: pointer;
       font-weight: 700;
     }
 
-    details p {
-      padding-top: 12px;
-      color: var(--muted);
+    .p1-faq details p {
+      color: var(--gray);
       font-size: 14px;
+      padding-top: 12px;
     }
 
-    /* FINAL CTA */
+    /* ================================
+       FINAL CTA
+       ================================ */
 
-    .final-cta {
-      background: var(--light);
+    .p1-final {
       text-align: center;
+      padding: 70px 0;
+      background: #eef5ff;
     }
 
-    .final-cta h2 {
+    .p1-final h2 {
       font-size: clamp(30px, 5vw, 43px);
       color: var(--navy);
       margin-bottom: 12px;
     }
 
-    .final-cta p {
-      color: var(--muted);
+    .p1-final p {
+      color: var(--gray);
       margin-bottom: 25px;
     }
 
-    .final-button {
+    .p1-final-button {
       display: inline-block;
       background: var(--blue);
       color: white;
       padding: 16px 30px;
       border-radius: 9px;
       font-weight: 800;
-      font-size: 17px;
     }
 
-    /* FOOTER */
+    /* ================================
+       FOOTER
+       ================================ */
 
-    footer {
+    .p1-footer {
       background: #06152d;
       color: #b9c7dc;
       text-align: center;
-      padding: 25px 15px;
+      padding: 28px 15px;
       font-size: 13px;
     }
 
-    footer strong {
+    .p1-footer strong {
       color: white;
     }
 
-    /* MOBILE */
+    /* ================================
+       MOBILE
+       ================================ */
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
 
-      .hero {
-        padding: 45px 0 55px;
-      }
-
-      .hero-content {
+      .p1-hero-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
       }
 
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero-text {
-        font-size: 16px;
-      }
-
-      .course-grid {
+      .p1-course-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .who-grid {
+      .p1-audience {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .p1-gallery {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 600px) {
 
-      section {
+      .p1-section {
         padding: 55px 0;
       }
 
-      .container {
+      .p1-container {
         width: 90%;
       }
 
-      .hero h1 {
+      .p1-hero {
+        padding: 45px 0 55px;
+      }
+
+      .p1-hero h1 {
+        font-size: 36px;
+      }
+
+      .p1-hero-description {
+        font-size: 16px;
+      }
+
+      .p1-price {
         font-size: 34px;
       }
 
-      .price {
-        font-size: 32px;
+      .p1-hero-image img,
+      .p1-image-placeholder {
+        height: 280px;
       }
 
-      .course-grid,
-      .benefit-grid,
-      .who-grid {
+      .p1-course-grid,
+      .p1-benefits,
+      .p1-gallery,
+      .p1-audience,
+      .p1-form-grid {
         grid-template-columns: 1fr;
       }
 
-      .course-card {
-        padding: 21px;
+      .p1-form-wrapper {
+        padding: 24px 18px;
       }
 
-      .offer-price {
-        font-size: 38px;
+      .p1-field.full {
+        grid-column: auto;
+      }
+
+      .p1-offer-price {
+        font-size: 39px;
       }
     }
   </style>
@@ -486,58 +673,71 @@
 
 <body>
 
-  <div class="top-bar">
-    🎓 Limited-time enrollment — Start learning practical digital skills today
+  <!-- TOP BAR -->
+  <div class="p1-topbar">
+    🎓 ELEVIQ DIGITAL SKILLS TRAINING
   </div>
 
+
   <!-- HERO -->
+  <header class="p1-hero">
 
-  <header class="hero">
-
-    <div class="container hero-content">
+    <div class="p1-container p1-hero-grid">
 
       <div>
 
-        <div class="badge">
-          ELEVIQ DIGITAL SKILLS TRAINING
+        <div class="p1-label">
+          PRODUCT 1 • BEGINNER / ESSENTIAL PACKAGE
         </div>
 
         <h1>
-          Build Digital Skills That
-          <span>Actually Matter.</span>
+          Master Computer &
+          <span>Office Skills</span>
         </h1>
 
-        <p class="hero-text">
-          Start from the basics and learn essential computer and creative
-          skills through practical, easy-to-follow lessons.
+        <p class="p1-hero-description">
+          Build practical computer skills that can help you work,
+          study, create documents and presentations, organize data,
+          and become more confident using a computer.
         </p>
 
-        <div class="price-box">
-          <div class="price">₦4,980</div>
+        <div class="p1-price-row">
 
-          <div class="payment-note">
-            Beginner / Essential Package
+          <div class="p1-price">
+            ₦4,980
           </div>
+
+          <div class="p1-price-label">
+            Complete Product 1 training package
+          </div>
+
         </div>
 
-        <a href="#register" class="cta">
-          Enroll Now →
+        <a href="#register" class="p1-main-button">
+          Register Your Interest →
         </a>
 
       </div>
 
-      <div class="hero-card">
 
-        <h3>What you'll learn</h3>
+      <!-- IMAGE AREA -->
+      <div class="p1-hero-image">
 
-        <ul>
-          <li>✓ Windows & Computer Basics</li>
-          <li>✓ Microsoft Word</li>
-          <li>✓ Microsoft PowerPoint</li>
-          <li>✓ Microsoft Excel</li>
-          <li>✓ CorelDRAW</li>
-          <li>✓ Photoshop</li>
-        </ul>
+        <!--
+          LATER:
+          Replace this placeholder with a real ELEVIQ
+          classroom/student image.
+        -->
+
+        <div class="p1-image-placeholder">
+          <div>
+            <strong>Learn. Practise. Grow.</strong>
+            <span>
+              Practical computer and office skills training
+              for beginners.
+            </span>
+          </div>
+        </div>
 
       </div>
 
@@ -547,83 +747,96 @@
 
 
   <!-- TRUST -->
+  <div class="p1-trust">
 
-  <div class="trust">
-    <div class="container">
+    <div class="p1-container">
+
       <p>
-        Designed for beginners • Learn at your own pace • Practical digital skills
+        Self-Paced Learning • Live Learning Sessions • Personal Coaching • Certificate
       </p>
+
     </div>
+
   </div>
 
 
-  <!-- COURSES -->
+  <!-- WHAT YOU WILL LEARN -->
 
-  <section>
+  <section class="p1-section">
 
-    <div class="container">
+    <div class="p1-container">
 
-      <div class="section-heading">
+      <div class="p1-heading">
 
-        <h2>What's Inside the Course?</h2>
+        <h2>What You'll Learn</h2>
 
         <p>
-          Get introduced to some of the most useful digital tools for
-          school, work, business and everyday life.
+          Product 1 focuses on essential computer and office applications
+          that beginners can use for school, work, business and everyday tasks.
         </p>
 
       </div>
 
 
-      <div class="course-grid">
+      <div class="p1-course-grid">
 
-        <div class="course-card">
-          <div class="course-icon">🖥️</div>
+        <div class="p1-course-card">
+
+          <div class="p1-course-icon">
+            🖥️
+          </div>
+
           <h3>Windows 10</h3>
+
           <p>
-            Understand the fundamentals of using a Windows computer
-            confidently.
+            Learn the fundamentals of using and navigating a Windows computer.
           </p>
+
         </div>
 
-        <div class="course-card">
-          <div class="course-icon">📝</div>
+
+        <div class="p1-course-card">
+
+          <div class="p1-course-icon">
+            📝
+          </div>
+
           <h3>Microsoft Word</h3>
+
           <p>
-            Create, format and manage professional documents.
+            Learn how to create, edit and format professional documents.
           </p>
+
         </div>
 
-        <div class="course-card">
-          <div class="course-icon">📊</div>
+
+        <div class="p1-course-card">
+
+          <div class="p1-course-icon">
+            📊
+          </div>
+
           <h3>Microsoft Excel</h3>
+
           <p>
-            Learn spreadsheets, calculations, tables and useful Excel tools.
+            Learn the foundations of spreadsheets, tables, calculations and data organization.
           </p>
+
         </div>
 
-        <div class="course-card">
-          <div class="course-icon">📽️</div>
-          <h3>PowerPoint</h3>
-          <p>
-            Create attractive presentations for school, work and business.
-          </p>
-        </div>
 
-        <div class="course-card">
-          <div class="course-icon">🎨</div>
-          <h3>CorelDRAW</h3>
-          <p>
-            Get started with graphic design and creative digital work.
-          </p>
-        </div>
+        <div class="p1-course-card">
 
-        <div class="course-card">
-          <div class="course-icon">🖼️</div>
-          <h3>Photoshop</h3>
+          <div class="p1-course-icon">
+            📽️
+          </div>
+
+          <h3>Microsoft PowerPoint</h3>
+
           <p>
-            Learn the foundations of image editing and digital design.
+            Learn how to create clear and attractive presentations.
           </p>
+
         </div>
 
       </div>
@@ -635,62 +848,81 @@
 
   <!-- BENEFITS -->
 
-  <section class="benefits">
+  <section class="p1-section p1-benefits-section">
 
-    <div class="container">
+    <div class="p1-container">
 
-      <div class="section-heading">
+      <div class="p1-heading">
 
         <h2>What You Get</h2>
 
         <p>
-          More than just watching lessons. The package is designed to help
-          you actually learn and practise.
+          Your Product 1 package comes with learning support designed
+          to help you progress from beginner to confident user.
         </p>
 
       </div>
 
 
-      <div class="benefit-grid">
+      <div class="p1-benefits">
 
-        <div class="benefit">
-          <div class="check">✓</div>
+        <div class="p1-benefit">
+
+          <div class="p1-check">✓</div>
+
           <div>
-            <h3>Pre-recorded Lessons</h3>
+            <h3>Self-Paced Recorded Lessons</h3>
+
             <p>
-              Learn whenever it is convenient for you.
+              Learn at a convenient pace and revisit lessons when necessary.
             </p>
           </div>
+
         </div>
 
-        <div class="benefit">
-          <div class="check">✓</div>
+
+        <div class="p1-benefit">
+
+          <div class="p1-check">✓</div>
+
           <div>
-            <h3>Learn at Your Own Pace</h3>
+            <h3>Live Learning Sessions</h3>
+
             <p>
-              Pause, replay and revisit lessons whenever necessary.
+              Participate in live learning sessions for additional guidance.
             </p>
           </div>
+
         </div>
 
-        <div class="benefit">
-          <div class="check">✓</div>
+
+        <div class="p1-benefit">
+
+          <div class="p1-check">✓</div>
+
           <div>
-            <h3>Certificate</h3>
+            <h3>Personal Coaching & Support</h3>
+
             <p>
-              Receive a certificate upon successful completion.
+              Receive personal guidance and support throughout your learning journey.
             </p>
           </div>
+
         </div>
 
-        <div class="benefit">
-          <div class="check">✓</div>
+
+        <div class="p1-benefit">
+
+          <div class="p1-check">✓</div>
+
           <div>
-            <h3>1-on-1 Coaching</h3>
+            <h3>Certificate of Completion</h3>
+
             <p>
-              Get additional guidance when you need help.
+              Receive a certificate after completing the required training.
             </p>
           </div>
+
         </div>
 
       </div>
@@ -700,42 +932,106 @@
   </section>
 
 
-  <!-- WHO IT IS FOR -->
+  <!-- CLASS / LEARNER IMAGES -->
 
-  <section>
+  <section class="p1-section">
 
-    <div class="container">
+    <div class="p1-container">
 
-      <div class="section-heading">
+      <div class="p1-heading">
 
-        <h2>Who Is This For?</h2>
+        <h2>Learn in a Practical Environment</h2>
 
         <p>
-          You don't need to be an expert before starting.
+          Get the guidance and support you need while building useful digital skills.
         </p>
 
       </div>
 
 
-      <div class="who-grid">
+      <div class="p1-gallery">
 
-        <div class="who-card">
-          <div>🎓</div>
+        <div class="p1-gallery-card">
+
+          <div class="p1-gallery-placeholder">
+            ELEVIQ learning session image
+          </div>
+
+          <div class="p1-gallery-caption">
+            Practical learning sessions
+          </div>
+
+        </div>
+
+
+        <div class="p1-gallery-card">
+
+          <div class="p1-gallery-placeholder">
+            Student learning image
+          </div>
+
+          <div class="p1-gallery-caption">
+            Learn and practise
+          </div>
+
+        </div>
+
+
+        <div class="p1-gallery-card">
+
+          <div class="p1-gallery-placeholder">
+            Computer training image
+          </div>
+
+          <div class="p1-gallery-caption">
+            Build useful computer skills
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHO IS IT FOR -->
+
+  <section class="p1-section">
+
+    <div class="p1-container">
+
+      <div class="p1-heading">
+
+        <h2>Who Is This Course For?</h2>
+
+        <p>
+          You don't need to be an expert to begin.
+        </p>
+
+      </div>
+
+
+      <div class="p1-audience">
+
+        <div class="p1-audience-card">
+          <div class="icon">🎓</div>
           <h3>Students</h3>
         </div>
 
-        <div class="who-card">
-          <div>💼</div>
+        <div class="p1-audience-card">
+          <div class="icon">💼</div>
           <h3>Job Seekers</h3>
         </div>
 
-        <div class="who-card">
-          <div>🚀</div>
+        <div class="p1-audience-card">
+          <div class="icon">🚀</div>
           <h3>Entrepreneurs</h3>
         </div>
 
-        <div class="who-card">
-          <div>💻</div>
+        <div class="p1-audience-card">
+          <div class="icon">💻</div>
           <h3>Beginners</h3>
         </div>
 
@@ -748,30 +1044,229 @@
 
   <!-- OFFER -->
 
-  <section class="offer" id="register">
+  <section class="p1-section p1-offer">
 
-    <div class="container">
+    <div class="p1-container">
 
-      <div class="offer-box">
+      <div class="p1-offer-box">
 
-        <h2>Start Learning Today</h2>
+        <h2>
+          Start Building Your Digital Skills
+        </h2>
 
         <p>
-          Get access to the Beginner / Essential Package and start
-          building practical digital skills.
+          Get the complete Master Computer & Office Skills package
+          for Product 1.
         </p>
 
-        <div class="offer-price">
+        <div class="p1-offer-price">
           ₦4,980
         </div>
 
-        <a
-          class="cta"
-          href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20want%20to%20register%20for%20the%20Beginner%20%2F%20Essential%20Package%20for%20%E2%82%A64%2C980."
-          target="_blank"
-        >
-          Register via WhatsApp →
+        <a href="#register" class="p1-main-button">
+          Register Your Interest →
         </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REGISTRATION FORM -->
+
+  <section class="p1-section p1-register" id="register">
+
+    <div class="p1-container">
+
+      <div class="p1-form-wrapper">
+
+        <div class="p1-form-heading">
+
+          <h2>Register Your Interest</h2>
+
+          <p>
+            Fill in your details and our team will contact you
+            with the next steps for Product 1.
+          </p>
+
+        </div>
+
+
+        <!--
+          FORM BACKEND WILL BE CONNECTED LATER.
+          DO NOT DELETE THE FORM.
+        -->
+
+        <form id="product1Form">
+
+          <div class="p1-form-grid">
+
+            <div class="p1-field">
+
+              <label for="fullName">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+              >
+
+            </div>
+
+
+            <div class="p1-field">
+
+              <label for="phone">
+                Phone Number
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="080XXXXXXXX"
+                required
+              >
+
+            </div>
+
+
+            <div class="p1-field">
+
+              <label for="email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="p1-field">
+
+              <label for="location">
+                Location
+              </label>
+
+              <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="City / State"
+                required
+              >
+
+            </div>
+
+
+            <div class="p1-field">
+
+              <label for="learningMode">
+                Preferred Learning Mode
+              </label>
+
+              <select
+                id="learningMode"
+                name="learningMode"
+                required
+              >
+
+                <option value="">
+                  Select an option
+                </option>
+
+                <option value="Online">
+                  Online
+                </option>
+
+                <option value="Physical">
+                  Physical
+                </option>
+
+                <option value="Both">
+                  Both
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="p1-field">
+
+              <label for="experience">
+                Computer Experience
+              </label>
+
+              <select
+                id="experience"
+                name="experience"
+                required
+              >
+
+                <option value="">
+                  Select an option
+                </option>
+
+                <option value="Beginner">
+                  Beginner
+                </option>
+
+                <option value="Basic">
+                  Basic
+                </option>
+
+                <option value="Intermediate">
+                  Intermediate
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="p1-field full">
+
+              <label for="message">
+                Anything You'd Like Us to Know? (Optional)
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us what you hope to learn..."
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="p1-submit"
+          >
+            Submit Registration Interest
+          </button>
+
+
+          <p class="p1-form-note">
+            Your information will be used to contact you about this course.
+          </p>
+
+        </form>
 
       </div>
 
@@ -782,57 +1277,98 @@
 
   <!-- FAQ -->
 
-  <section>
+  <section class="p1-section">
 
-    <div class="container">
+    <div class="p1-container">
 
-      <div class="section-heading">
+      <div class="p1-heading">
 
         <h2>Frequently Asked Questions</h2>
 
       </div>
 
 
-      <div class="faq">
+      <div class="p1-faq">
 
         <details>
-          <summary>Is this course suitable for beginners?</summary>
+
+          <summary>
+            Is this course suitable for beginners?
+          </summary>
+
           <p>
-            Yes. The package is designed to introduce learners to
-            essential digital and creative tools.
+            Yes. Product 1 is designed around essential computer
+            and office skills for learners who want to build their foundation.
           </p>
+
         </details>
 
-        <details>
-          <summary>Can I learn at my own pace?</summary>
-          <p>
-            Yes. The package includes pre-recorded lessons that allow
-            you to learn according to your schedule.
-          </p>
-        </details>
 
         <details>
-          <summary>Will I receive a certificate?</summary>
+
+          <summary>
+            What courses are included?
+          </summary>
+
           <p>
-            Yes. A certificate is provided upon successful completion
-            of the course requirements.
+            Product 1 includes Windows 10, Microsoft Word,
+            Microsoft Excel and Microsoft PowerPoint.
           </p>
+
         </details>
 
-        <details>
-          <summary>How do I register?</summary>
-          <p>
-            Click any of the registration buttons on this page to
-            contact ELEVIQ and begin the registration process.
-          </p>
-        </details>
 
         <details>
-          <summary>Do I need previous computer experience?</summary>
+
+          <summary>
+            Will there be live learning sessions?
+          </summary>
+
           <p>
-            No. The course starts with foundational skills and progresses
-            into the different tools included in the package.
+            Yes. The package includes live learning sessions in addition
+            to self-paced recorded lessons.
           </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Will I receive a certificate?
+          </summary>
+
+          <p>
+            Yes. The package includes a certificate of completion.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Is personal support available?
+          </summary>
+
+          <p>
+            Yes. Personal coaching and support are included in the package.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            How much does Product 1 cost?
+          </summary>
+
+          <p>
+            Product 1 — Master Computer & Office Skills —
+            costs ₦4,980.
+          </p>
+
         </details>
 
       </div>
@@ -844,22 +1380,23 @@
 
   <!-- FINAL CTA -->
 
-  <section class="final-cta">
+  <section class="p1-final">
 
-    <div class="container">
+    <div class="p1-container">
 
-      <h2>Ready to Start?</h2>
+      <h2>
+        Ready to Start Learning?
+      </h2>
 
       <p>
-        Take the first step toward building practical digital skills.
+        Register your interest and let ELEVIQ guide you through the next step.
       </p>
 
       <a
-        class="final-button"
-        href="https://wa.me/2349011582752?text=Hello%20ELEVIQ%2C%20I%20want%20to%20register%20for%20the%20Beginner%20%2F%20Essential%20Package."
-        target="_blank"
+        href="#register"
+        class="p1-final-button"
       >
-        Get Started — ₦4,980
+        Register Now — ₦4,980
       </a>
 
     </div>
@@ -869,11 +1406,13 @@
 
   <!-- FOOTER -->
 
-  <footer>
+  <footer class="p1-footer">
 
-    <strong>ELEVIQ</strong><br>
+    <strong>ELEVIQ</strong>
 
-    Digital Skills • Education • Opportunities
+    <br>
+
+    Education • Digital Skills • Opportunities
 
     <br><br>
 
@@ -881,5 +1420,24 @@
 
   </footer>
 
+
+  <!-- TEMPORARY FORM BEHAVIOUR -->
+
+  <script>
+
+    document
+      .getElementById("product1Form")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+          "Thank you! Your registration interest has been received. ELEVIQ will contact you shortly."
+        );
+
+      });
+
+  </script>
+
 </body>
-  </html>
+</html>
